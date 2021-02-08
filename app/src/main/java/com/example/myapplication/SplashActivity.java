@@ -10,15 +10,12 @@ import android.os.Handler;
 import android.view.Window;
 
 public class SplashActivity extends AppCompatActivity {
-Window window;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+//    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setTheme(R.style.SplashTheme);
-        window=this.getWindow();
-        window.setStatusBarColor(this.getResources().getColor(R.color.dark));
+        this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
 

@@ -21,11 +21,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FavouritesFragment()).commit();
         setContentView(R.layout.activity_main);
+
         Button Btn = (Button) findViewById(R.id.button);
         Btn.setVisibility(View.GONE);
+
         BottomNavigationView bottomNav=findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navlistner);
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_person_24);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         OnClickListener oclBtnOk = new OnClickListener() {
             @Override

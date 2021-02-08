@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Main</string>
+    <string name="app_name">NOTALONE.TV</string>
     <string name="title_activity_second">О проекте</string>
     <string name="title_activity_third">Условия пользования</string>
     <!-- Strings used for fragments for navigation -->
