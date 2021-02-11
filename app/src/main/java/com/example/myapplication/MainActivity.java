@@ -2,14 +2,18 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FavouritesFragment()).commit();
         setContentView(R.layout.activity_main);
 
-        Button Btn = (Button) findViewById(R.id.button);
-        Btn.setVisibility(View.GONE);
-
         BottomNavigationView bottomNav=findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navlistner);
 
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
-        Btn.setOnClickListener(oclBtnOk);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navlistner =
@@ -72,7 +72,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
-        return true;
+        final MenuItem search = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) search.getActionView();
+        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -87,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
                 startActivity(intent);
                 break;
+            }
+            case R.id.search:{
+
             }
         }
         return true;

@@ -21,17 +21,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Button Btn = (Button) findViewById(R.id.button2);
-        Btn.setVisibility(View.GONE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
 

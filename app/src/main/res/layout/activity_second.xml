@@ -7,21 +7,4 @@
     android:background="@color/dark"
     tools:context=".SecondActivity">
 
-    <Button
-        android:id="@+id/button2"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="250dp"
-        android:gravity="center"
-        android:text="→"
-        android:textColor="@color/black"
-        android:textSize="20pt"
-        android:textStyle="bold"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

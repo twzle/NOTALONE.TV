@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -12,26 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"/>
-
-        <Button
-            android:id="@+id/button"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="250dp"
-            android:layout_marginBottom="250dp"
-            android:insetLeft="0dp"
-            android:insetTop="6dp"
-            android:insetBottom="6dp"
-            android:text="→"
-            android:textColor="@color/black"
-            android:textSize="20pt"
-            android:textStyle="bold"
-            app:backgroundTint="#FFFFFF"
-            app:elevation="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
