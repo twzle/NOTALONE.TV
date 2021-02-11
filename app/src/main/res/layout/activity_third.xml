@@ -5,23 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark"
-    tools:context=".ThirdActivity">
-
-    <Button
-        android:id="@+id/button3"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="250dp"
-        android:background="@android:color/transparent"
-        android:text="←"
-        android:textColor="@color/black"
-        android:textSize="20pt"
-        android:textStyle="bold"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".ThirdActivity"/>

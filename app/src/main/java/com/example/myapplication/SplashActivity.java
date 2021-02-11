@@ -7,9 +7,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.Window;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
 //    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -17,6 +18,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
         setContentView(R.layout.activity_splash);
+
+        FullScreencall();
+
         getSupportActionBar().hide();
 
         Handler handler = new Handler();

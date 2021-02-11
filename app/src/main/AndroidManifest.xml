@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".AuthActivity"></activity>
-        <!-- SplashScreen activity -->
+        <activity android:name=".ProfileActivity"
+            android:label="Профиль"
+            android:theme="@style/dark">
+        </activity>
+        <activity android:name=".AuthActivity" /> <!-- SplashScreen activity -->
         <activity
             android:name=".SplashActivity"
             android:windowBackground="@color/gray">

@@ -15,18 +15,9 @@ public class ThirdActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        getSupportActionBar().show();
         setContentView(R.layout.activity_third);
-        Button Btn = (Button) findViewById(R.id.button3);
-        Btn.setVisibility(View.GONE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-        Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ThirdActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
