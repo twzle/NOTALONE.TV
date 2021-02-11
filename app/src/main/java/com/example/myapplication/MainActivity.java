@@ -20,12 +20,12 @@ import android.view.View.OnClickListener;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FavouritesFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CatalogueFragment()).commit();
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNav=findViewById(R.id.bottom_navigation);
@@ -74,15 +74,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar, menu);
         final MenuItem search = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) search.getActionView();
-        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                }
-            }
-        });
+        HideKeyboardSearch(searchView);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -102,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.search:{
 
             }
+            case android.R.id.home:
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                break;
         }
         return true;
     }

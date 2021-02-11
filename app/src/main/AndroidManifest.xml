@@ -9,25 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-
-        <!-- SplashScreen activity -->
+        <activity android:name=".ProfileActivity"
+            android:label="Профиль"
+            android:theme="@style/dark">
+        </activity>
+        <activity android:name=".AuthActivity" /> <!-- SplashScreen activity -->
         <activity
             android:name=".SplashActivity"
             android:windowBackground="@color/gray">
-<!--            android:theme="@style/SplashTheme">-->
+
+            <!-- android:theme="@style/SplashTheme"> -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- ThirdActivity -->
+        </activity> <!-- ThirdActivity -->
         <activity
             android:name=".ThirdActivity"
-            android:label="@string/title_activity_third" />
-
-        <!-- SecondActivity -->
+            android:label="@string/title_activity_third" /> <!-- SecondActivity -->
         <activity
             android:name=".SecondActivity"
             android:label="@string/title_activity_second"
@@ -43,4 +43,5 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
     </application>
+
 </manifest>

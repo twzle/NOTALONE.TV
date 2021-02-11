@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ImageView
+        android:id="@+id/auth_screen"
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        android:gravity="center"
+        android:src="@drawable/ic_logo"
+        android:layout_marginTop="75dp" />
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:hint="@string/login"
+        android:textColorHint="#656567"
+        android:paddingStart="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:inputType="textPersonName"
+        tools:ignore="RtlSymmetry"
+
+        android:layout_marginTop="30dp"
+        android:background="@drawable/auth_fields"/>
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:hint="@string/pass"
+        android:textColorHint="#656567"
+        android:paddingStart="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:inputType="textPassword"
+        tools:ignore="RtlSymmetry"
+
+        android:layout_marginTop="7dp"
+        android:background="@drawable/auth_fields" />
+
+    <Button
+        android:id="@+id/button_enter"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+
+        android:layout_marginRight="100dp"
+        android:backgroundTint="#cacacc"
+        android:fontFamily="sans-serif"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0.05"
+        android:text="@string/enter"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:cornerRadius="9dp" />
+
+    <Button
+        android:id="@+id/button_reg"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="7dp"
+
+        android:layout_marginRight="100dp"
+        android:backgroundTint="#00bf3e"
+        android:fontFamily="sans-serif"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0.05"
+        android:text="@string/reg"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:cornerRadius="9dp" />
+
+    <Button
+        android:id="@+id/button_enter_as"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="200dp"
+
+        android:layout_marginRight="100dp"
+        android:backgroundTint="@android:color/transparent"
+        android:fontFamily="sans-serif"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:letterSpacing="0.05"
+        android:outlineProvider="none"
+        android:text="@string/enter2"
+        android:textAllCaps="false"
+
+        android:textColor="@color/white"
+        app:cornerRadius="9dp" />
+
+
+</LinearLayout>
