@@ -28,6 +28,7 @@
         app:itemIconTint="@drawable/btn_selector"
         app:itemTextColor="@drawable/btn_selector"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation" />
+        app:menu="@menu/bottom_navigation"
+        app:itemRippleColor="#00AF78"/>
 
 </RelativeLayout>

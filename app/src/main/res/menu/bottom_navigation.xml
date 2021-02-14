@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_catalogue"
         android:icon="@drawable/ic_outline_list_alt_24"
+        app:rippleColor="@color/mtrl_btn_ripple_color"
         android:title="Каталог" />
     <item
         android:id="@+id/nav_favourites"
         android:icon="@drawable/ic_outline_favorite_border_24"
+        app:rippleColor="@color/mtrl_btn_ripple_color"
         android:title="Избранное" />
     <item
         android:id="@+id/nav_rooms"
         android:icon="@drawable/ic_outline_play_arrow_24"
+        app:rippleColor="@color/mtrl_btn_ripple_color"
         android:title="Комнаты" />
     <item
         android:id="@+id/nav_support"
         android:icon="@drawable/ic_outline_email_24"
+        app:rippleColor="@color/mtrl_btn_ripple_color"
         android:title="Поддержка" />
 
 </menu>

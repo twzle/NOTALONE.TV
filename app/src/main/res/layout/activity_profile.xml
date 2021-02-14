@@ -4,351 +4,362 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".ProfileActivity"
-    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
     android:layout_alignParentTop="true"
     android:layout_alignParentRight="true"
-    android:layout_alignParentLeft="true">
+    android:layout_alignParentBottom="true"
+    android:background="@color/dark"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <RelativeLayout
-        android:id="@+id/profileField"
-        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/profile_fields"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:scrollbarThumbVertical="@color/white"
+        android:visibility="visible">
 
-
-        <ImageButton
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
-            android:backgroundTint="@color/dark"
-            android:src="@drawable/ic_level"
-            android:layout_alignParentRight="true" />
-
-        <TextView
-            android:id="@+id/nickname"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="75dp"
-
-            android:fontFamily="@font/lato_bold"
-            android:text="@string/nickname"
-            android:textAlignment="textEnd"
-            android:textColor="@color/white"
-            android:textSize="32sp" />
-
-        <TextView
-            android:id="@+id/statusText"
-            android:layout_width="142dp"
-            android:layout_height="wrap_content"
-
-            android:layout_below="@id/nickname"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="75dp"
-            android:fontFamily="@font/lato"
-            android:text="Онлайн"
-            android:textAlignment="textEnd"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/image_profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="18dp"
-            app:srcCompat="@drawable/ic_profile" />
-
-        <Button
-            android:id="@+id/edit_profile"
+        <RelativeLayout
+            android:id="@+id/profileField"
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_below="@id/image_profile"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="5dp"
-
-            android:backgroundTint="@color/dark"
-            android:fontFamily="@font/lato"
-            android:insetTop="0dp"
-
-            android:letterSpacing="0.05"
-            android:outlineProvider="none"
-            android:text="@string/edit_profile"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0.572dp"
-            android:layout_below="@id/edit_profile"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7.5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="7.5dp"
-            android:alpha="0.1"
-            android:background="@drawable/lines" />
-
-        <Button
-            android:id="@+id/subscribe"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/edit_profile"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/dark"
-
-            android:drawableLeft="@drawable/ic_subscribtion"
-            android:fontFamily="@font/lato"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:letterSpacing="0.05"
-            android:outlineProvider="none"
-            android:paddingStart="20dp"
-            android:text="@string/subscribe"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0.572dp"
-            android:layout_below="@id/subscribe"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7.5dp"
-            android:layout_marginRight="20dp"
-            android:alpha="0.1"
-            android:background="@drawable/lines" />
-
-        <Button
-            android:id="@+id/status"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/subscribe"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/dark"
-
-
-            android:drawableLeft="@drawable/ic_status"
-            android:fontFamily="@font/lato"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:letterSpacing="0.05"
-            android:outlineProvider="none"
-            android:paddingStart="20dp"
-            android:text="@string/status"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <Button
-            android:id="@+id/friends"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/status"
-            android:layout_alignParentStart="true"
-            android:backgroundTint="@color/dark"
-
-
-            android:drawableLeft="@drawable/ic_friends"
-            android:fontFamily="@font/lato"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:letterSpacing="0.05"
-            android:outlineProvider="none"
-            android:paddingStart="20dp"
-            android:text="@string/friends"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <Button
-            android:id="@+id/settings"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/friends"
-            android:layout_alignParentStart="true"
-
-            android:backgroundTint="@color/dark"
-
-
-            android:drawableLeft="@drawable/ic_outline_settings_24"
-            android:fontFamily="@font/lato"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:letterSpacing="0.05"
-            android:outlineProvider="none"
-            android:paddingStart="20dp"
-            android:text="Настройки"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <Button
-            android:id="@+id/donate"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/settings"
-            android:backgroundTint="@color/dark"
-
-
-            android:drawableLeft="@drawable/ic_donate"
-            android:fontFamily="@font/lato"
-            android:insetLeft="-1dp"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:letterSpacing="0.05"
-
-            android:outlineProvider="none"
-            android:paddingStart="21dp"
-            android:text="@string/charity"
-
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0.572dp"
-            android:layout_below="@id/donate"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7.5dp"
-            android:layout_marginRight="20dp"
-            android:alpha="0.1"
-            android:background="@drawable/lines" />
-
-        <Button
-            android:id="@+id/news"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/donate"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/dark"
-
-
-            android:drawableLeft="@drawable/ic_growing_up"
-            android:fontFamily="@font/lato"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:letterSpacing="0.05"
-
-            android:outlineProvider="none"
-            android:paddingStart="21dp"
-            android:text="@string/news"
-
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <Button
-            android:id="@+id/about"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/news"
-            android:backgroundTint="@color/dark"
-            android:drawableLeft="@drawable/ic_outline_info_24"
-            android:fontFamily="@font/lato"
-
-
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:letterSpacing="0.05"
-            android:outlineProvider="none"
-            android:paddingStart="20dp"
-            android:text="@string/about"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0.572dp"
-            android:layout_below="@id/about"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7.5dp"
-            android:layout_marginRight="20dp"
-            android:alpha="0.1"
-            android:background="@drawable/lines" />
-
-        <Button
-            android:id="@+id/logout"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_below="@id/about"
-            android:layout_marginTop="17dp"
-            android:layout_marginBottom="0dp"
-            android:backgroundTint="@color/dark"
-
-            android:drawableLeft="@drawable/ic_outline_exit_to_app_24"
-            android:fontFamily="@font/lato_bold"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-
-            android:outlineProvider="none"
-            android:paddingStart="21dp"
-
-            android:text="@string/logout"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="#ff0000"
-            android:textSize="18sp"
-
-
-            app:cornerRadius="7dp"
-            tools:ignore="RtlCompat" />
-
-        <ImageView
-            android:id="@+id/splashscreen"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/profile_fields"
             android:gravity="center"
-            android:layout_below="@id/logout"
-            android:src="@drawable/ic_logo" />
+            android:orientation="vertical">
 
 
-    </RelativeLayout>
+            <Button
+                android:layout_width="42dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="22dp"
+
+
+
+
+                android:drawableTop="@drawable/ic_level"
+                style="?android:attr/borderlessButtonStyle"
+                android:gravity="center_vertical"
+                android:insetTop="-2dp"
+                android:insetRight="-3dp" />
+
+            <TextView
+                android:id="@+id/nickname"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="75dp"
+
+                android:fontFamily="@font/lato_bold"
+                android:text="@string/nickname"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="142dp"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/nickname"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="75dp"
+                android:fontFamily="@font/lato"
+                android:text="Онлайн"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/image_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="18dp"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <Button
+                android:id="@+id/edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_below="@id/image_profile"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="5dp"
+
+                android:backgroundTint="@color/dark"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:text="@string/edit_profile"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.572dp"
+                android:layout_below="@id/edit_profile"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="7.5dp"
+                android:alpha="0.1"
+                android:background="@drawable/lines" />
+
+            <Button
+                android:id="@+id/subscribe"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/edit_profile"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/dark"
+
+                android:drawableLeft="@drawable/ic_subscribtion"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="@string/subscribe"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.572dp"
+                android:layout_below="@id/subscribe"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginRight="20dp"
+                android:alpha="0.1"
+                android:background="@drawable/lines" />
+
+            <Button
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/subscribe"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/dark"
+
+
+                android:drawableLeft="@drawable/ic_status"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="@string/status"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <Button
+                android:id="@+id/friends"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/status"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@color/dark"
+
+
+                android:drawableLeft="@drawable/ic_friends"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="@string/friends"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <Button
+                android:id="@+id/settings"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/friends"
+                android:layout_alignParentStart="true"
+
+                android:backgroundTint="@color/dark"
+
+
+                android:drawableLeft="@drawable/ic_outline_settings_24"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="Настройки"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <Button
+                android:id="@+id/donate"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/settings"
+                android:backgroundTint="@color/dark"
+
+
+                android:drawableLeft="@drawable/ic_donate"
+                android:fontFamily="@font/lato"
+                android:insetLeft="-1dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+
+                android:outlineProvider="none"
+                android:paddingStart="21dp"
+                android:text="@string/charity"
+
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.572dp"
+                android:layout_below="@id/donate"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginRight="20dp"
+                android:alpha="0.1"
+                android:background="@drawable/lines" />
+
+            <Button
+                android:id="@+id/news"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/donate"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/dark"
+
+
+                android:drawableLeft="@drawable/ic_growing_up"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+
+                android:outlineProvider="none"
+                android:paddingStart="21dp"
+                android:text="@string/news"
+
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <Button
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/news"
+                android:backgroundTint="@color/dark"
+                android:drawableLeft="@drawable/ic_outline_info_24"
+                android:fontFamily="@font/lato"
+
+
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="@string/about"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.572dp"
+                android:layout_below="@id/about"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginRight="20dp"
+                android:alpha="0.1"
+                android:background="@drawable/lines" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/about"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="0dp"
+
+                android:backgroundTint="@color/dark"
+                android:drawableLeft="@drawable/ic_outline_exit_to_app_24"
+                android:fontFamily="@font/lato_bold"
+                android:insetTop="0dp"
+
+                android:insetBottom="0dp"
+                android:outlineProvider="none"
+
+                android:paddingStart="21dp"
+                android:text="@string/logout"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#ff0000"
+                android:textSize="18sp"
+
+
+                app:cornerRadius="7dp"
+                app:rippleColor="@color/mtrl_btn_ripple_color"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/splashscreen"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@id/logout"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:src="@drawable/ic_logo" />
+
+
+        </RelativeLayout>
     </ScrollView>
 
 </LinearLayout>

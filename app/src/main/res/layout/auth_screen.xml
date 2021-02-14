@@ -68,7 +68,8 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:cornerRadius="9dp" />
+        app:cornerRadius="9dp"
+        app:rippleColor="@color/mtrl_btn_ripple_color" />
 
     <Button
         android:id="@+id/button_reg"
@@ -87,29 +88,31 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:cornerRadius="9dp" />
+        app:cornerRadius="9dp"
+        app:rippleColor="@color/mtrl_btn_ripple_color" />
 
     <Button
         android:id="@+id/button_enter_as"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="149dp"
+        android:layout_height="25dp"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
 
 
         android:backgroundTint="@color/dark"
         android:fontFamily="sans-serif"
-        android:insetLeft="5dp"
-        android:insetTop="10dp"
-        android:insetRight="5dp"
-        android:insetBottom="10dp"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
         android:letterSpacing="0.05"
         android:outlineProvider="none"
 
         android:text="@string/enter2"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:cornerRadius="9dp" />
+        app:cornerRadius="9dp"
+        app:rippleColor="@color/mtrl_btn_ripple_color" />
 
 
 </LinearLayout>
