@@ -24,4 +24,13 @@
     <string name="subscribe">Подписка</string>
     <string name="edit_profile">Редактировать профиль</string>
     <string name="nickname">NickName</string>
+    <string name="forgot_pass">Забыли пароль?</string>
+    <string name="rooms">Комнаты</string>
+    <string name="my_rooms">Мои комнаты</string>
+    <string name="no_rooms">У Вас нет совместных комнат</string>
+    <string name="list_friends">Список друзей</string>
+    <string name="online">Онлайн</string>
+    <string name="no_active_friends">Нет активных друзей</string>
+    <string name="offline">Оффлайн</string>
+    <string name="no_offline_friends">Найди себе друга ;)</string>
 </resources>

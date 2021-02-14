@@ -1,13 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rooms"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+    android:background="@color/dark"
+    android:gravity="top">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/white">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/rooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+
+                android:fontFamily="@font/lato_black"
+
+                android:text="@string/rooms"
+                android:textColor="@color/white"
+                android:textSize="44sp" />
+
+            <TextView
+                android:id="@+id/my_rooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+
+                android:layout_below="@id/rooms"
+                android:fontFamily="@font/lato_bold"
+
+                android:drawableStart="@drawable/ic_my_rooms"
+                android:drawablePadding="2dp"
+                android:text="@string/my_rooms"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <FrameLayout
+                android:id="@+id/container_rooms"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:gravity="center"
+                android:layout_below="@+id/my_rooms">
+                <TextView
+                    android:id="@+id/no_rooms"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:text="@string/no_rooms" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/list_frineds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+
+                android:layout_below="@id/container_rooms"
+                android:fontFamily="@font/lato_bold"
+
+                android:drawableStart="@drawable/ic_my_rooms"
+                android:drawablePadding="2dp"
+                android:text="@string/list_friends"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/online_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@id/list_frineds"
+
+                    android:fontFamily="@font/lato_bold"
+                    android:drawablePadding="2dp"
+                    android:text="@string/online"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+                <FrameLayout
+                    android:id="@+id/container_active_friends"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/online_header">
+                    <TextView
+                        android:id="@+id/no_active_friends"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/lato_bold"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:text="@string/no_active_friends" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/offline_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/container_active_friends"
+
+                    android:fontFamily="@font/lato_bold"
+                    android:drawablePadding="2dp"
+                    android:text="@string/offline"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <FrameLayout
+                    android:id="@+id/container_offline_friends"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/offline_header">
+                    <TextView
+                        android:id="@+id/no_offline_friends"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/lato_bold"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:text="@string/no_offline_friends" />
+                </FrameLayout>
+
+            </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

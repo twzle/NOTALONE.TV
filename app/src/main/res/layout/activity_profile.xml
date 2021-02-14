@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
     android:layout_alignParentTop="true"
-    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
     android:layout_alignParentBottom="true"
     android:background="@color/dark"
     android:gravity="center"
@@ -22,7 +22,7 @@
         <RelativeLayout
             android:id="@+id/profileField"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:background="@drawable/profile_fields"
             android:gravity="center"
@@ -121,7 +121,7 @@
             <Button
                 android:id="@+id/subscribe"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/edit_profile"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="15dp"
@@ -138,7 +138,7 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:cornerRadius="7dp"
                 tools:ignore="RtlCompat" />
 
@@ -155,7 +155,7 @@
             <Button
                 android:id="@+id/status"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/subscribe"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="15dp"
@@ -173,14 +173,14 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:cornerRadius="7dp"
                 tools:ignore="RtlCompat" />
 
             <Button
                 android:id="@+id/friends"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/status"
                 android:layout_alignParentStart="true"
                 android:backgroundTint="@color/dark"
@@ -197,14 +197,14 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:cornerRadius="7dp"
                 tools:ignore="RtlCompat" />
 
             <Button
                 android:id="@+id/settings"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/friends"
                 android:layout_alignParentStart="true"
 
@@ -222,14 +222,14 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:cornerRadius="7dp"
                 tools:ignore="RtlCompat" />
 
             <Button
                 android:id="@+id/donate"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/settings"
                 android:backgroundTint="@color/dark"
 
@@ -248,7 +248,7 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:cornerRadius="7dp"
                 tools:ignore="RtlCompat" />
 
@@ -265,7 +265,7 @@
             <Button
                 android:id="@+id/news"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/donate"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="@color/dark"
@@ -284,14 +284,14 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:cornerRadius="7dp"
                 tools:ignore="RtlCompat" />
 
             <Button
                 android:id="@+id/about"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/news"
                 android:backgroundTint="@color/dark"
                 android:drawableLeft="@drawable/ic_outline_info_24"
@@ -307,7 +307,7 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:cornerRadius="7dp"
                 tools:ignore="RtlCompat" />
 
@@ -324,7 +324,7 @@
             <Button
                 android:id="@+id/logout"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/about"
                 android:layout_marginTop="17dp"
                 android:layout_marginBottom="0dp"
@@ -342,21 +342,12 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="#ff0000"
-                android:textSize="18sp"
+                android:textSize="16sp"
 
 
                 app:cornerRadius="7dp"
                 app:rippleColor="@color/mtrl_btn_ripple_color"
                 tools:ignore="RtlCompat" />
-
-            <ImageView
-                android:id="@+id/splashscreen"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@id/logout"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:src="@drawable/ic_logo" />
 
 
         </RelativeLayout>
