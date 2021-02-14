@@ -6,18 +6,23 @@
     android:color="@color/dark_gray">
 
     <item
-        android:id="@+id/about"
-        android:title="О проекте" />
+        android:id="@+id/notifications"
+        android:icon="@drawable/ic_baseline_notifications_none_30"
+        android:title=""
+        app:showAsAction="always|collapseActionView" />
 
     <item
-        android:id="@+id/rules"
-        android:title="Условия пользования"/>
+        android:id="@+id/message"
+        android:icon="@drawable/ic_baseline_message_28"
+        android:title=""
+        app:showAsAction="always|collapseActionView" />
 
     <item
         android:id="@+id/search"
-        android:icon="@drawable/ic_outline_search_24"
+        android:icon="@drawable/ic_outline_search_30"
         android:title=""
         app:showAsAction="always|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+
 
 </menu>

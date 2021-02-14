@@ -27,6 +27,7 @@ public class AuthActivity extends BaseActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(AuthActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         };
         Btn.setOnClickListener(oclBtnOk);
