@@ -8,16 +8,23 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".ProfileActivity"
-    android:layout_alignParentBottom="true">
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentLeft="true">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/profileField"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginBottom="30dp"
         android:background="@drawable/profile_fields"
         android:gravity="center"
         android:orientation="vertical">
+
 
         <ImageButton
             android:layout_width="65dp"
@@ -331,14 +338,17 @@
             app:cornerRadius="7dp"
             tools:ignore="RtlCompat" />
 
-    </RelativeLayout>
+        <ImageView
+            android:id="@+id/splashscreen"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_below="@id/logout"
+            android:src="@drawable/ic_logo" />
 
-    <ImageView
-        android:id="@+id/splashscreen"
-        android:layout_width="56dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:src="@drawable/ic_logo" />
+
+    </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>

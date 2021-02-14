@@ -15,6 +15,7 @@ public class ProfileActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_close_30);
+
         getWindow().setNavigationBarColor(getResources().getColor(R.color.dark));
 
         this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
