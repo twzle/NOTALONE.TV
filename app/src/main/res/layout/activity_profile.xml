@@ -30,15 +30,12 @@
 
 
             <Button
+                android:id="@+id/lvl"
                 android:layout_width="42dp"
                 android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="22dp"
-
-
-
-
                 android:drawableTop="@drawable/ic_level"
                 style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
