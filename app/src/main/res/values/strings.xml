@@ -15,4 +15,7 @@
     <string name="enter">Вход</string>
     <string name="reg">Регистрация</string>
     <string name="enter2">Войти как гость</string>
+    <string name="logout">Выйти</string>
+    <string name="about">О проекте</string>
+    <string name="news">Развитие проекта</string>
 </resources>

@@ -5,13 +5,6 @@
     android:id="@+id/toolbar"
     android:color="@color/dark_gray">
 
-    <item
-        android:id="@+id/about"
-        android:title="О проекте" />
-
-    <item
-        android:id="@+id/rules"
-        android:title="Условия пользования"/>
 
     <item
         android:id="@+id/search"

@@ -1,20 +1,13 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -31,7 +24,7 @@ public class MainActivity extends BaseActivity {
         BottomNavigationView bottomNav=findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navlistner);
 
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_person_24);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_person_30);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         OnClickListener oclBtnOk = new OnClickListener() {
@@ -81,16 +74,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.about: {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.rules: {
-                Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
-                startActivity(intent);
-                break;
-            }
             case android.R.id.home:
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                 startActivity(intent);

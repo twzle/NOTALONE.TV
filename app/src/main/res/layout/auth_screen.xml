@@ -91,21 +91,23 @@
 
     <Button
         android:id="@+id/button_enter_as"
-        android:layout_width="match_parent"
-        android:layout_height="33dp"
-        android:layout_marginLeft="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="200dp"
 
-        android:layout_marginRight="100dp"
-        android:backgroundTint="@android:color/transparent"
+
+        android:backgroundTint="@color/dark"
         android:fontFamily="sans-serif"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
+        android:insetLeft="5dp"
+        android:insetTop="10dp"
+        android:insetRight="5dp"
+        android:insetBottom="10dp"
         android:letterSpacing="0.05"
         android:outlineProvider="none"
+
         android:text="@string/enter2"
         android:textAllCaps="false"
-
         android:textColor="@color/white"
         app:cornerRadius="9dp" />
 
