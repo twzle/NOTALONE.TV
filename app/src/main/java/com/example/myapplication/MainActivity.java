@@ -74,19 +74,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-//            case R.id.about: {
-//                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-//                startActivity(intent);
-//                break;
-//            }
-//            case R.id.rules: {
-//                Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
-//                startActivity(intent);
-//                break;
-//            }
-            case R.id.search:{
-                break;
-            }
             case android.R.id.home:
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                 startActivity(intent);

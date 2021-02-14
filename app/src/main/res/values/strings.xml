@@ -15,4 +15,13 @@
     <string name="enter">Вход</string>
     <string name="reg">Регистрация</string>
     <string name="enter2">Войти как гость</string>
+    <string name="logout">Выйти</string>
+    <string name="about">О проекте</string>
+    <string name="news">Развитие проекта</string>
+    <string name="friends">Друзья</string>
+    <string name="charity">Поддержать</string>
+    <string name="status">Статус</string>
+    <string name="subscribe">Подписка</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="nickname">NickName</string>
 </resources>

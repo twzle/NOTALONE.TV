@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".ProfileActivity"
-            android:label="Профиль"
+            android:label="Аккаунт"
             android:theme="@style/dark">
         </activity>
         <activity android:name=".AuthActivity" /> <!-- SplashScreen activity -->
@@ -31,17 +31,20 @@
         <activity
             android:name=".SecondActivity"
             android:label="@string/title_activity_second"
-            android:theme="@style/Theme.MyApplication" />
+            android:theme="@style/Theme.MyApplication" /> <!-- MainActivity -->
+        <activity android:name=".MainActivity"
+            android:label="">
 
-        <!-- MainActivity -->
-        <activity
-            android:name=".MainActivity"
-            android:label="" />
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
