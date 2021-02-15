@@ -43,7 +43,7 @@
                 android:insetRight="-3dp" />
 
             <TextView
-                android:id="@+id/nickname"
+                android:id="@+id/nickname_reg"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -62,7 +62,7 @@
                 android:layout_width="142dp"
                 android:layout_height="wrap_content"
 
-                android:layout_below="@id/nickname"
+                android:layout_below="@id/nickname_reg"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="75dp"

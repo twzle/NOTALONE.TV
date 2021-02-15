@@ -23,7 +23,7 @@
     <string name="status">Статус</string>
     <string name="subscribe">Подписка</string>
     <string name="edit_profile">Редактировать профиль</string>
-    <string name="nickname">NickName</string>
+    <string name="nickname">Никнейм</string>
     <string name="forgot_pass">Забыли пароль?</string>
     <string name="rooms">Комнаты</string>
     <string name="my_rooms">Мои комнаты</string>
@@ -33,4 +33,8 @@
     <string name="no_active_friends">Нет активных друзей</string>
     <string name="offline">Оффлайн</string>
     <string name="no_offline_friends">Найди себе друга ;)</string>
+    <string name="no_access">*Неверный логин или пароль</string>
+    <string name="repeat_pass">Повторите пароль</string>
+    <string name="email">Email</string>
+    <string name="already_have_an_account">Уже есть аккаунт?</string>
 </resources>
