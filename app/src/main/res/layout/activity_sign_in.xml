@@ -186,8 +186,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
 
-                    android:fontFamily="@font/Lato-Regular"
-                    app:fontFamily="@font/Lato-Regular"
+                    android:fontFamily="@font/lato"
+                    app:fontFamily="@font/lato"
                     android:gravity="center"
                     android:text="@string/auth_through"
                     android:textAlignment="center"

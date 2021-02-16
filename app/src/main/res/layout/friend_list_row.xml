@@ -2,12 +2,10 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recyclerview_online_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:backgroundTint="@color/dark"
-    android:clickable="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     app:cardElevation="3dp">
 
     <RelativeLayout
