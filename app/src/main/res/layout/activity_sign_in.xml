@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".SignInActivity"
     android:background="@color/dark"
-   >
+    android:layout_gravity="center">
 
     <ScrollView
 
@@ -137,7 +137,7 @@
 
                 android:layout_marginRight="90dp"
                 android:backgroundTint="#00AF78"
-                android:fontFamily="@font/lato"
+                android:font="@font/lato"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:letterSpacing="0.05"
@@ -158,7 +158,7 @@
 
 
                 android:backgroundTint="@color/dark"
-                android:fontFamily="@font/lato"
+                android:font="@font/lato"
                 android:insetLeft="-15dp"
                 android:insetTop="0dp"
                 android:insetRight="-15dp"
@@ -173,28 +173,49 @@
                 app:cornerRadius="9dp"
                 app:rippleColor="@color/mtrl_btn_ripple_color" />
 
-            <ImageButton
-                android:id="@+id/vk_enter"
-                android:layout_width="56dp"
-                android:layout_height="50dp"
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
                 android:layout_below="@+id/already_have_an_account"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/dark"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_vk_logo" />
+                android:layout_marginTop="15dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
 
-            <ImageButton
-                android:id="@+id/google_enter"
-                android:layout_width="56dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/already_have_an_account"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/vk_enter"
-                android:backgroundTint="@color/dark"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_google_logo" />
+                    android:layout_above="@id/vk_enter"
+                    android:text="Авторизироваться через"
+                    android:font="@font/lato"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:gravity="center"/>
 
+                <ImageButton
+                    android:id="@+id/vk_enter"
+                    android:layout_width="56dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+
+
+                    android:backgroundTint="@color/dark"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_vk_auth" />
+
+                <ImageButton
+                    android:id="@+id/google_enter"
+                    android:layout_width="56dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@id/vk_enter"
+                    android:layout_marginLeft="10dp"
+
+
+                    android:backgroundTint="@color/dark"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_google_auth" />
+            </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>
