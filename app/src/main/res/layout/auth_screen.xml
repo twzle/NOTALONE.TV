@@ -144,24 +144,29 @@
         android:layout_marginTop="15dp"
         android:gravity="center">
         <TextView
+            android:id="@+id/auth_through"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
 
 
-            android:layout_above="@id/vk_enter"
             android:text="Авторизироваться через"
             android:font="@font/lato"
             android:textSize="14sp"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:gravity="center"/>
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@id/auth_through">
         <ImageButton
             android:id="@+id/vk_enter"
             android:layout_width="56dp"
             android:layout_height="50dp"
 
-            android:layout_marginLeft="140dp"
+
             android:backgroundTint="@color/dark"
             android:scaleType="center"
             android:src="@drawable/ic_vk_auth" />
@@ -170,11 +175,13 @@
             android:id="@+id/google_enter"
             android:layout_width="56dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/vk_enter"
+            android:layout_toRightOf="@id/vk_enter"
+
+
             android:backgroundTint="@color/dark"
             android:scaleType="center"
             android:src="@drawable/ic_google_auth" />
+    </RelativeLayout>
     </RelativeLayout>
 
     <Button

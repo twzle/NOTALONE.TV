@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark"
+    android:orientation="vertical"
     android:gravity="top">
 
     <ScrollView
@@ -52,6 +54,8 @@
                 android:layout_height="170dp"
                 android:gravity="center"
                 android:layout_below="@+id/my_rooms">
+
+
                 <TextView
                     android:id="@+id/no_rooms"
 
@@ -89,6 +93,7 @@
 
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_below="@id/list_frineds"
 
                     android:font="@font/lato_bold"
@@ -101,15 +106,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@id/online_header">
-                    <TextView
-                        android:id="@+id/no_active_friends"
+
+                    <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:id="@+id/recyclerview_online_friends">
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                    <TextView
+                        android:id="@+id/empty_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
                         android:gravity="center"
-                        android:font="@font/lato_bold"
-                        android:textColor="@color/white"
                         android:textSize="18sp"
-                        android:text="@string/no_active_friends" />
+                        android:textColor="@color/white"
+                        android:font="@font/lato_bold"
+                        android:text="@string/no_active_friends"
+                        tools:targetApi="o" />
                 </FrameLayout>
 
                 <TextView
@@ -122,6 +138,7 @@
                     android:layout_below="@id/container_active_friends"
 
                     android:font="@font/lato_bold"
+                    tools:targetApi="o"
                     android:drawablePadding="2dp"
                     android:text="@string/offline"
                     android:textColor="@color/white"

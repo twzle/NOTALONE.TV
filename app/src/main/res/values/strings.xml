@@ -37,4 +37,5 @@
     <string name="repeat_pass">Повторите пароль</string>
     <string name="email">Email</string>
     <string name="already_have_an_account">Уже есть аккаунт?</string>
+    <string name="auth_through">Авторизироваться через</string>
 </resources>
