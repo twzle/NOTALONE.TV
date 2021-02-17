@@ -40,6 +40,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
             @Override
             public void onClick(View v) {
                 v.getContext().startActivity(new Intent(v.getContext(),ProfileActivity.class));
+
             }
         });
     }

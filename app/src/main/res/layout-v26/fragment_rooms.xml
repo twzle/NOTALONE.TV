@@ -23,7 +23,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
 
-                android:font="@font/lato_black"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
 
                 android:text="@string/rooms"
                 android:textColor="@color/white"
@@ -40,7 +41,8 @@
                 android:layout_marginBottom="10dp"
 
                 android:layout_below="@id/rooms"
-                android:font="@font/lato_bold"
+                android:fontFamily="@font/lato_bold"
+                android:textStyle="bold"
 
                 android:drawableStart="@drawable/ic_my_rooms"
                 android:drawablePadding="2dp"
@@ -62,7 +64,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="170dp"
                     android:gravity="center"
-                    android:font="@font/lato_bold"
+                    android:fontFamily="@font/lato_bold"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:text="@string/no_rooms" />
@@ -78,7 +81,8 @@
                 android:layout_marginTop="10dp"
 
                 android:layout_below="@id/container_rooms"
-                android:font="@font/lato_bold"
+                android:fontFamily="@font/lato_bold"
+                android:textStyle="bold"
 
                 android:drawableStart="@drawable/ic_my_rooms"
                 android:drawablePadding="2dp"
@@ -96,7 +100,8 @@
                     android:layout_marginBottom="5dp"
                     android:layout_below="@id/list_frineds"
 
-                    android:font="@font/lato_bold"
+                    android:fontFamily="@font/lato_bold"
+                    android:textStyle="bold"
                     android:drawablePadding="2dp"
                     android:text="@string/online"
                     android:textColor="@color/white"
@@ -111,6 +116,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="true"
+
+
                         android:focusable="true"
                         android:focusableInTouchMode="true"
                         android:id="@+id/recyclerview_online_friends">
@@ -123,9 +130,9 @@
                         android:gravity="center"
                         android:textSize="18sp"
                         android:textColor="@color/white"
-                        android:font="@font/lato_bold"
-                        android:text="@string/no_active_friends"
-                        tools:targetApi="o" />
+                        android:fontFamily="@font/lato_bold"
+                        android:textStyle="bold"
+                        android:text="@string/no_active_friends" />
                 </FrameLayout>
 
                 <TextView
@@ -137,8 +144,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_below="@id/container_active_friends"
 
-                    android:font="@font/lato_bold"
-                    tools:targetApi="o"
+                    android:fontFamily="@font/lato_bold"
+                    android:textStyle="bold"
                     android:drawablePadding="2dp"
                     android:text="@string/offline"
                     android:textColor="@color/white"
@@ -154,7 +161,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="85dp"
                         android:gravity="center"
-                        android:font="@font/lato_bold"
+                        android:fontFamily="@font/lato_bold"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:text="@string/no_offline_friends" />

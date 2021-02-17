@@ -51,25 +51,25 @@ public class RoomsFragment extends Fragment {
         friend.setNickname("INEXY");
         friend.setStatus("here we go");
         friend.setImg(R.drawable.ic_profile);
-//        friends.add(friend);
+        friends.add(friend);
 
         friend = new Friend();
         friend.setNickname("NEXY");
         friend.setStatus("kek");
         friend.setImg(R.drawable.ic_profile);
-//        friends.add(friend);
+        friends.add(friend);
 
         friend = new Friend();
         friend.setNickname("Admin");
         friend.setStatus("вы");
         friend.setImg(R.drawable.ic_profile);
-//        friends.add(friend);
+        friends.add(friend);
 
         friend = new Friend();
         friend.setNickname("Guest");
         friend.setStatus("undefined");
         friend.setImg(R.drawable.ic_profile);
-//        friends.add(friend);
+        friends.add(friend);
 
         return friends;
     }

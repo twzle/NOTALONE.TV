@@ -4,5 +4,6 @@
         <item>@font/lato</item>
         <item>@font/lato_black</item>
         <item>@font/lato_bold</item>
+        <item name="fontFamily">@font/lato_black</item>
     </array>
 </resources>

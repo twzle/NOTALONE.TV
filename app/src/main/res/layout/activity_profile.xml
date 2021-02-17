@@ -51,7 +51,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="75dp"
 
-                android:font="@font/lato_bold"
+                android:fontFamily="@font/lato_bold"
+                android:textStyle="bold"
                 android:text="@string/nickname"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
@@ -66,7 +67,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="75dp"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
                 android:text="Онлайн"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
@@ -91,7 +92,8 @@
                 android:layout_marginTop="5dp"
 
                 android:backgroundTint="@color/dark"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
+                android:textStyle="bold"
                 android:insetTop="0dp"
 
                 android:letterSpacing="0.05"
@@ -125,7 +127,7 @@
                 android:backgroundTint="@color/dark"
 
                 android:drawableLeft="@drawable/ic_subscribtion"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:letterSpacing="0.05"
@@ -160,7 +162,7 @@
 
 
                 android:drawableLeft="@drawable/ic_status"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:letterSpacing="0.05"
@@ -184,7 +186,7 @@
 
 
                 android:drawableLeft="@drawable/ic_friends"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:letterSpacing="0.05"
@@ -209,7 +211,7 @@
 
 
                 android:drawableLeft="@drawable/ic_outline_settings_24"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:letterSpacing="0.05"
@@ -232,7 +234,7 @@
 
 
                 android:drawableLeft="@drawable/ic_donate"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
                 android:insetLeft="-1dp"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
@@ -269,7 +271,7 @@
 
 
                 android:drawableLeft="@drawable/ic_growing_up"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:letterSpacing="0.05"
@@ -292,7 +294,7 @@
                 android:layout_below="@id/news"
                 android:backgroundTint="@color/dark"
                 android:drawableLeft="@drawable/ic_outline_info_24"
-                android:font="@font/lato"
+                android:fontFamily="@font/lato"
 
 
                 android:insetTop="0dp"
@@ -328,7 +330,8 @@
 
                 android:backgroundTint="@color/dark"
                 android:drawableLeft="@drawable/ic_outline_exit_to_app_24"
-                android:font="@font/lato_bold"
+                android:fontFamily="@font/lato_bold"
+                android:textStyle="bold"
                 android:insetTop="0dp"
 
                 android:insetBottom="0dp"

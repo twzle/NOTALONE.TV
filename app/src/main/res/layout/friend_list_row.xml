@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/recyclerview_online_card"
     android:layout_width="match_parent"
@@ -11,41 +10,36 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        >
+        android:background="?android:selectableItemBackground"
+        android:padding="5dp">
+
         <ImageView
+            android:id="@+id/iv_friend_profile_img"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/iv_friend_profile_img"
             android:layout_marginStart="10dp"
-            android:src="@mipmap/ic_launcher"
-            >
-        </ImageView>
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/iv_friend_nickname"
-            android:text="Nickname"
-            android:textSize="16sp"
-            android:textColor="@color/white"
-            android:layout_toEndOf="@id/iv_friend_profile_img"
-            android:layout_marginStart="10dp"
-            >
-        </TextView>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/iv_friend_status"
-            android:text="Status"
-            android:textSize="14sp"
-            android:textColor="@color/white"
+            android:layout_marginStart="10dp"
             android:layout_toEndOf="@id/iv_friend_profile_img"
-            android:layout_below="@id/iv_friend_nickname"
-            android:layout_marginStart="10dp">
-        </TextView>
+            android:text="Nickname"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
 
+        <TextView
+            android:id="@+id/iv_friend_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_friend_nickname"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/iv_friend_profile_img"
+            android:text="Status"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

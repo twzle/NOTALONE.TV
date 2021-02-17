@@ -12,7 +12,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.auth_screen);
+        setContentView(R.layout.activity_auth);
         getSupportActionBar().hide();
         this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
