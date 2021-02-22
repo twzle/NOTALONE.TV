@@ -2,18 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_notalone"
         android:label="NotAlone"
+        android:networkSecurityConfig="@xml/network"
         android:roundIcon="@mipmap/ic_notalone_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".SignInActivity"></activity>
+        <activity android:name=".SignInActivity">
+        </activity>
         <activity
             android:name=".ProfileActivity"
             android:label="Аккаунт"
-            android:theme="@style/dark"></activity>
+            android:theme="@style/dark">
+
+        </activity>
         <activity android:name=".AuthActivity" /> <!-- SplashScreen activity -->
         <activity
             android:name=".SplashActivity"
@@ -27,16 +36,16 @@
             </intent-filter>
         </activity> <!-- ThirdActivity -->
         <activity
-            android:name=".ThirdActivity"
+            android:name=".RulesActivity"
             android:label="@string/title_activity_third" /> <!-- SecondActivity -->
         <activity
-            android:name=".SecondActivity"
+            android:name=".AboutActivity"
             android:label="@string/title_activity_second"
             android:theme="@style/Theme.MyApplication" /> <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
-            android:label="">
-
+            android:label=""
+            android:windowSoftInputMode="adjustPan">
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
 

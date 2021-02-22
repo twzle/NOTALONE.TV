@@ -42,7 +42,7 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.about :
-                startActivity(new Intent(ProfileActivity.this, SecondActivity.class));
+                startActivity(new Intent(ProfileActivity.this, AboutActivity.class));
                 break;
             case R.id.logout :
                 startActivity(new Intent(ProfileActivity.this, AuthActivity.class));

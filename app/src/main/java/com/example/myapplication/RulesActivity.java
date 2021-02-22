@@ -1,20 +1,20 @@
 package com.example.myapplication;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Bundle;
 import android.view.MenuItem;
 
-public class SecondActivity extends AppCompatActivity {
+public class RulesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+//        getSupportActionBar().show();
+        setContentView(R.layout.activity_rules);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

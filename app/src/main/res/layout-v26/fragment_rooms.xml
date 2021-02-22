@@ -5,7 +5,10 @@
     android:layout_height="match_parent"
     android:background="@color/dark"
     android:orientation="vertical"
-    android:gravity="top">
+    android:gravity="top"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clickable="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -151,6 +154,7 @@
                     android:textColor="@color/white"
                     android:textSize="18sp"/>
 
+
                 <FrameLayout
                     android:id="@+id/container_offline_friends"
                     android:layout_width="match_parent"
@@ -170,5 +174,8 @@
 
             </RelativeLayout>
     </ScrollView>
+
+
+
 
 </LinearLayout>
