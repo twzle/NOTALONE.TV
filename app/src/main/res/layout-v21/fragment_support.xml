@@ -1,13 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/dark">
-    <TextView
-        android:layout_width="wrap_content"
+
+<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/image_notalone"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="Поддержка"
+                android:textSize="40sp"
+                style="@style/TextView"
+                />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="50dp"
+                android:layout_height= "50dp"
+                android:src="@drawable/ic_logo"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <!--вместо 50 dp - wrap_content
+            Вставить картинку меню с тремя полосками вместо @drawable/ic_logo-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Форма для связи"
+            android:textSize="24sp"
+            style="@style/TextView"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ваше имя"
+            android:textSize="20sp"
+            style="@style/EditText"/>
+
+        <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Support"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+        android:hint="Вопрос обращения"
+        android:textSize="20sp"
+            style="@style/EditText"/>
+
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Текст обращения"
+            android:gravity="top"
+            android:textSize="20sp"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            style="@style/EditText"/>
+
+        />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Отправить"
+            app:cornerRadius="9dp"
+            style="@style/ButtonStyle"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Поддержать проект"
+            android:textSize="24sp"
+            style="@style/TextView"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Сумма"
+            android:textSize="20sp"
+            style="@style/EditText"/>
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Сообщение пожертвования"
+            android:textSize="20sp"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            style="@style/EditText"/>
+        />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Поддержать"
+            app:cornerRadius="9dp"
+            style="@style/ButtonStyle"
+            />
+
+
+
+    </LinearLayout>
+</ScrollView>
+
+    <ImageView
+        android:id="@+id/image_notalone"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/ic_logo" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
