@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -17,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RoomsFragment extends Fragment {
+public class RoomsFragment extends Fragment{
 
     RecyclerView mRecyclerView;
     FriendAdapter mfriendAdapter;
@@ -44,7 +46,8 @@ public class RoomsFragment extends Fragment {
 
         return view;
     }
-        
+
+
     private ArrayList<Friend> getFriendList(){
         ArrayList<Friend> friends = new ArrayList<>();
 
