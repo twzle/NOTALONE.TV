@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerview_online_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/dark"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/MovieField"
+            android:layout_width="match_parent"
+            android:layout_height="205dp"
+            android:gravity="center_vertical"
+
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/iv_movie_catalogue_img"
+                android:layout_width="120dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="10dp"
+                android:src="@mipmap/ic_launcher"
+                android:background="@drawable/favorites_fields"/>
+
+            <TextView
+                android:id="@+id/iv_catalogue_moviename"
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_movie_catalogue_img"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+                android:text="@string/moviename"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/iv_kinopoisk"
+                android:layout_below="@+id/iv_catalogue_moviename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_movie_catalogue_img"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+                android:text="@string/kinopoisk"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/iv_imdb"
+                android:layout_below="@+id/iv_kinopoisk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_movie_catalogue_img"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+                android:text="IMBD:"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/iv_year"
+                android:layout_below="@+id/iv_imdb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_movie_catalogue_img"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+                android:text="@string/year"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/iv_country"
+                android:layout_below="@+id/iv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_movie_catalogue_img"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+                android:text="@string/country"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/iv_genre"
+                android:layout_below="@+id/iv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_movie_catalogue_img"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+                android:text="@string/Genre"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.572dp"
+                android:layout_below="@id/iv_movie_catalogue_img"
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@id/iv_movie_catalogue_img"
+                android:layout_marginTop="10dp"
+                android:alpha="0.8"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/green_lines" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

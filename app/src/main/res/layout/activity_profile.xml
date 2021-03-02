@@ -115,7 +115,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="7.5dp"
                 android:alpha="0.1"
-                android:background="@drawable/lines" />
+                android:background="@drawable/white_lines" />
 
             <Button
                 android:id="@+id/subscribe"
@@ -149,7 +149,7 @@
                 android:layout_marginTop="7.5dp"
                 android:layout_marginRight="20dp"
                 android:alpha="0.1"
-                android:background="@drawable/lines" />
+                android:background="@drawable/white_lines" />
 
             <Button
                 android:id="@+id/status"
@@ -242,7 +242,7 @@
 
                 android:outlineProvider="none"
                 android:paddingStart="21dp"
-                android:text="@string/charity"
+                android:text="@string/support"
 
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
@@ -259,7 +259,7 @@
                 android:layout_marginTop="7.5dp"
                 android:layout_marginRight="20dp"
                 android:alpha="0.1"
-                android:background="@drawable/lines" />
+                android:background="@drawable/white_lines" />
 
             <Button
                 android:id="@+id/news"
@@ -318,7 +318,7 @@
                 android:layout_marginTop="7.5dp"
                 android:layout_marginRight="20dp"
                 android:alpha="0.1"
-                android:background="@drawable/lines" />
+                android:background="@drawable/white_lines" />
 
             <Button
                 android:id="@+id/logout"

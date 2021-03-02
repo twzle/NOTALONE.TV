@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Friends;
 
 import android.content.Intent;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.R;
 
 public class FriendHolder extends RecyclerView.ViewHolder {
 

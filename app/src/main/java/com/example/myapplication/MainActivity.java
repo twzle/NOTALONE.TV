@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
                         case R.id.nav_catalogue:
                             selectedFragment = new CatalogueFragment();
                             break;
-                        case R.id.nav_support:
+                        case R.id.nav_messeges:
                             selectedFragment = new SupportFragment();
                             break;
                     }

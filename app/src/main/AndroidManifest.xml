@@ -38,6 +38,13 @@
         <activity
             android:name=".RulesActivity"
             android:label="@string/title_activity_third" /> <!-- SecondActivity -->
+
+        <activity
+            android:name=".SupportActivity"
+            android:label="Поддержка"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.MyApplication" />
+
         <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_second"

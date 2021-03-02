@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Friends;
 
 public class    Friend {
 

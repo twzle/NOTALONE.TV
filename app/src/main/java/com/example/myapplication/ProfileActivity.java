@@ -48,6 +48,9 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
                 startActivity(new Intent(ProfileActivity.this, AuthActivity.class));
                 finish();
                 break;
+            case R.id.donate :
+                startActivity(new Intent(ProfileActivity.this, SupportActivity.class));
+                break;
         }
     }
 

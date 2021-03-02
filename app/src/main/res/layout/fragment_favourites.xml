@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Favourites"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+    android:background="@color/dark"
+    android:orientation="vertical"
+    android:gravity="top">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:clickable="true"
+            android:focusableInTouchMode="true">
+            <TextView
+                android:id="@+id/rooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+
+                android:text="@string/favorites"
+                android:textColor="@color/white"
+                android:textSize="44sp" />
+
+            <TextView
+                android:id="@+id/my_rooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+
+                android:layout_below="@id/rooms"
+                android:fontFamily="@font/lato_bold"
+                android:textStyle="bold"
+
+                android:drawableStart="@drawable/ic_outline_watch_later_24"
+                android:drawablePadding="2dp"
+                android:text="@string/watch_later"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <FrameLayout
+                android:id="@+id/container_rooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/my_rooms">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_watch_later"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+
+
+
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/empty_recycler_view_movies"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/lato_bold"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:text="@string/no_movies" />
+            </FrameLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

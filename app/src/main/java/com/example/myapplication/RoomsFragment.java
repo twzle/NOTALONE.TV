@@ -1,21 +1,18 @@
 package com.example.myapplication;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.webkit.WebView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.Friends.Friend;
+import com.example.myapplication.Friends.FriendAdapter;
 
 import java.util.ArrayList;
 
@@ -72,6 +69,24 @@ public class RoomsFragment extends Fragment{
         friend = new Friend();
         friend.setNickname("Guest");
         friend.setStatus("undefined");
+        friend.setImg(R.drawable.ic_profile);
+        friends.add(friend);
+
+        friend = new Friend();
+        friend.setNickname("omg12_2");
+        friend.setStatus("you are like me");
+        friend.setImg(R.drawable.ic_profile);
+        friends.add(friend);
+
+        friend = new Friend();
+        friend.setNickname("killstation");
+        friend.setStatus("wrong suppose");
+        friend.setImg(R.drawable.ic_profile);
+        friends.add(friend);
+
+        friend = new Friend();
+        friend.setNickname("dracula1723");
+        friend.setStatus("is it true?");
         friend.setImg(R.drawable.ic_profile);
         friends.add(friend);
 
