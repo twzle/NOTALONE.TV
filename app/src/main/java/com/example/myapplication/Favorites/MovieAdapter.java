@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.AboutActivity;
 import com.example.myapplication.FavouritesFragment;
 import com.example.myapplication.Friends.Friend;
 import com.example.myapplication.Friends.FriendHolder;
@@ -42,7 +43,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.getContext().startActivity(new Intent(v.getContext(), FavouritesFragment.class));
+                v.getContext().startActivity(new Intent(v.getContext(), AboutActivity.class));
 
             }
         });

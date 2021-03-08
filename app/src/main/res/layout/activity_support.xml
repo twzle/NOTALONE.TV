@@ -103,6 +103,7 @@
 
 
             <Button
+                android:id="@+id/support_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Отправить"
@@ -156,6 +157,7 @@
 
 
             <Button
+                android:id="@+id/donate_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Поддержать"
@@ -166,7 +168,7 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:cornerRadius="9dp"
-                android:layout_marginBottom="600dp"
+                android:layout_marginBottom="0dp"
                 />
 
         </LinearLayout>

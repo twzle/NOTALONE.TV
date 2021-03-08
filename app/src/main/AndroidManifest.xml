@@ -42,7 +42,7 @@
         <activity
             android:name=".SupportActivity"
             android:label="Поддержка"
-            android:windowSoftInputMode="adjustPan"
+            android:windowSoftInputMode="stateVisible|adjustResize"
             android:theme="@style/Theme.MyApplication" />
 
         <activity
