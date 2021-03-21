@@ -44,7 +44,7 @@
 
             <TextView
                 android:id="@+id/nickname_reg"
-                android:layout_width="220dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
@@ -56,11 +56,14 @@
                 android:text="@string/nickname"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                android:maxLength="10"
+                android:ellipsize="end"
+                />
 
             <TextView
                 android:id="@+id/statusText"
-                android:layout_width="142dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:layout_below="@id/nickname_reg"
@@ -71,7 +74,10 @@
                 android:text="Онлайн"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:maxLength="15"
+                android:ellipsize="end"
+                />
 
             <ImageView
                 android:id="@+id/image_profile"

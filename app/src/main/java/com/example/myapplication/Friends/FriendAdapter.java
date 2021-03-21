@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.ProfileActivity;
 import com.example.myapplication.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
 
@@ -35,13 +38,18 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
     public void onBindViewHolder(@NonNull FriendHolder holder, int position) {
         holder.mNickname.setText(friends.get(position).getNickname());
         holder.mStatus.setText(friends.get(position).getStatus());
-        holder.mImageView.setImageResource(friends.get(position).getImg());
+        holder.mImageView.setImageBitmap(friends.get(position).getImg());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.getContext().startActivity(new Intent(v.getContext(), ProfileActivity.class));
+                Friend friend = new Friend();
+                friend.setNickname(friends.get(position).getNickname());
+                friend.setStatus(friends.get(position).getStatus());
 
+                Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                intent.putExtra("User", (Serializable) friend);
+                v.getContext().startActivity(intent);
             }
         });
     }

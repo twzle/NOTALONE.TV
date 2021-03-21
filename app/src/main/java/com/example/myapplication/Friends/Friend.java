@@ -1,9 +1,18 @@
 package com.example.myapplication.Friends;
 
-public class    Friend {
+import android.graphics.Bitmap;
+import android.os.Parcelable;
 
-    private String nickname, status;
-    private int img;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+public class Friend implements Serializable {
+
+    @SerializedName("username")
+    private String nickname;
+    @SerializedName("name")
+    private String status;
+    private Bitmap img;
 
     public String getNickname() {
         return nickname;
@@ -21,11 +30,11 @@ public class    Friend {
         this.status = status;
     }
 
-    public int getImg() {
+    public Bitmap getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(Bitmap img) {
         this.img = img;
     }
 }

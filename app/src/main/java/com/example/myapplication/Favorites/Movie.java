@@ -1,9 +1,14 @@
 package com.example.myapplication.Favorites;
 
 
-public class    Movie {
+import com.google.gson.annotations.SerializedName;
 
-    private String moviename, country, genre;
+public class  Movie {
+
+    @SerializedName("title")
+    private String moviename;
+    private String country;
+    private String genre;
     private float kinopoisk, imdb;
     private int movieImg, year;
 
