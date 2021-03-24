@@ -28,15 +28,6 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
 
         onInitializeButtons();
 
-        if (getIntent().getExtras()!=null) {
-            Friend friend;
-            friend = (Friend) getIntent().getSerializableExtra("User");
-            TextView nickname = (TextView) findViewById(R.id.nickname_reg);
-            TextView status = (TextView) findViewById(R.id.statusText);
-            nickname.setText(friend.getNickname());
-            status.setText(friend.getStatus());
-        }
-
     }
 
 

@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 
     <application
         android:allowBackup="true"
@@ -15,14 +14,15 @@
         android:roundIcon="@mipmap/ic_notalone_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".views.SignInActivity">
-        </activity>
+        <activity
+            android:name=".views.UserInformationActivity"
+            android:label="Пользователь"
+            android:theme="@style/dark"></activity>
+        <activity android:name=".views.SignInActivity"></activity>
         <activity
             android:name=".views.ProfileActivity"
             android:label="Аккаунт"
-            android:theme="@style/dark">
-
-        </activity>
+            android:theme="@style/dark"></activity>
         <activity android:name=".views.AuthActivity" /> <!-- SplashScreen activity -->
         <activity
             android:name=".views.SplashActivity"
@@ -38,13 +38,11 @@
         <activity
             android:name=".views.RulesActivity"
             android:label="@string/title_activity_third" /> <!-- SecondActivity -->
-
         <activity
             android:name=".views.SupportActivity"
             android:label="Поддержка"
-            android:windowSoftInputMode="stateVisible|adjustResize"
-            android:theme="@style/Theme.MyApplication" />
-
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".views.AboutActivity"
             android:label="@string/title_activity_second"
@@ -53,6 +51,7 @@
             android:name=".views.MainActivity"
             android:label=""
             android:windowSoftInputMode="adjustPan">
+
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
 

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentBottom="true"
+    android:background="@color/dark"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".views.ProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/white"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/profileField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/profile_fields"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/lvl"
+                android:layout_width="42dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="22dp"
+                android:drawableTop="@drawable/ic_level"
+                style="?android:attr/borderlessButtonStyle"
+                android:gravity="center_vertical"
+                android:insetTop="-2dp"
+                android:insetRight="-3dp" />
+
+            <TextView
+                android:id="@+id/nickname_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="75dp"
+
+                android:fontFamily="@font/lato_bold"
+                android:textStyle="bold"
+                android:text="@string/nickname"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:maxLength="10"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/nickname_reg"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="75dp"
+                android:fontFamily="@font/lato"
+                android:text="Онлайн"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:maxLength="15"
+                android:ellipsize="end"
+                />
+
+            <ImageView
+                android:id="@+id/image_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="18dp"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.572dp"
+                android:layout_below="@id/image_profile"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="7.5dp"
+                android:alpha="0.1"
+                android:background="@drawable/white_lines" />
+
+            <Button
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/image_profile"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/dark"
+
+                android:drawableLeft="@drawable/ic_baseline_chat"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="Написать сообщение"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+
+            <Button
+                android:id="@+id/unfriend"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/message"
+                android:layout_alignParentStart="true"
+
+                android:backgroundTint="@color/dark"
+
+                android:drawableLeft="@drawable/ic_baseline_unfriend"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="Удалить из друзей"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+            <Button
+                android:id="@+id/ban_user"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/unfriend"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@color/dark"
+
+                android:drawableLeft="@drawable/ic_outline_pan_tool_24"
+                android:fontFamily="@font/lato"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:outlineProvider="none"
+                android:paddingStart="20dp"
+                android:text="Заблокировать"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:cornerRadius="7dp"
+                tools:ignore="RtlCompat" />
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

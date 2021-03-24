@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.views.ProfileActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.models.Friend;
+import com.example.myapplication.views.UserInformationActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
                 friend.setNickname(friends.get(position).getNickname());
                 friend.setStatus(friends.get(position).getStatus());
 
-                Intent intent = new Intent(v.getContext(), ProfileActivity.class);
+                Intent intent = new Intent(v.getContext(), UserInformationActivity.class);
                 intent.putExtra("User", (Serializable) friend);
                 v.getContext().startActivity(intent);
             }
