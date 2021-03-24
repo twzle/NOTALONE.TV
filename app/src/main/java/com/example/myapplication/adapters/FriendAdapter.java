@@ -1,4 +1,4 @@
-package com.example.myapplication.Friends;
+package com.example.myapplication.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,13 +9,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.ProfileActivity;
+import com.example.myapplication.views.ProfileActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.models.Friend;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class FriendAdapter extends RecyclerView.Adapter<FriendHolder> {
 

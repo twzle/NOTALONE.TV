@@ -15,17 +15,17 @@
         android:roundIcon="@mipmap/ic_notalone_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".SignInActivity">
+        <activity android:name=".views.SignInActivity">
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".views.ProfileActivity"
             android:label="Аккаунт"
             android:theme="@style/dark">
 
         </activity>
-        <activity android:name=".AuthActivity" /> <!-- SplashScreen activity -->
+        <activity android:name=".views.AuthActivity" /> <!-- SplashScreen activity -->
         <activity
-            android:name=".SplashActivity"
+            android:name=".views.SplashActivity"
             android:windowBackground="@color/gray">
 
             <!-- android:theme="@style/SplashTheme"> -->
@@ -36,21 +36,21 @@
             </intent-filter>
         </activity> <!-- ThirdActivity -->
         <activity
-            android:name=".RulesActivity"
+            android:name=".views.RulesActivity"
             android:label="@string/title_activity_third" /> <!-- SecondActivity -->
 
         <activity
-            android:name=".SupportActivity"
+            android:name=".views.SupportActivity"
             android:label="Поддержка"
             android:windowSoftInputMode="stateVisible|adjustResize"
             android:theme="@style/Theme.MyApplication" />
 
         <activity
-            android:name=".AboutActivity"
+            android:name=".views.AboutActivity"
             android:label="@string/title_activity_second"
             android:theme="@style/Theme.MyApplication" /> <!-- MainActivity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:label=""
             android:windowSoftInputMode="adjustPan">
             <!-- <intent-filter> -->

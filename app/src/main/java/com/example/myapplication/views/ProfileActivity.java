@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.myapplication.Friends.Friend;
+import com.example.myapplication.R;
+import com.example.myapplication.models.Friend;
 
 public class ProfileActivity extends BaseActivity implements  View.OnClickListener {
 

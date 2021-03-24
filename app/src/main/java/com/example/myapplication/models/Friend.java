@@ -1,4 +1,4 @@
-package com.example.myapplication.Friends;
+package com.example.myapplication.models;
 
 import android.graphics.Bitmap;
 import android.os.Parcelable;

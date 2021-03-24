@@ -1,4 +1,4 @@
-package com.example.myapplication.Favorites;
+package com.example.myapplication.adapters;
 
 import android.content.Intent;
 import android.view.View;

@@ -1,24 +1,26 @@
-package com.example.myapplication;
+package com.example.myapplication.views;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-public class SupportFragment extends Fragment implements View.OnClickListener {
+import com.example.myapplication.R;
+
+class AllCatalogueFragment extends Fragment implements View.OnClickListener {
     MainActivity main = new MainActivity();
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_support, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_all_catalogue, container, false);
         onInitializeElements(v);
         return v;
     }

@@ -11,7 +11,7 @@
     android:background="@color/dark"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ProfileActivity">
+    tools:context=".views.ProfileActivity">
 
     <ScrollView
         android:layout_width="match_parent"

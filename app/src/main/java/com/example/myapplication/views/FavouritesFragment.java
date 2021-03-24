@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.views;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,12 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Favorites.Movie;
-import com.example.myapplication.Favorites.MovieAdapter;
-import com.example.myapplication.Friends.Friend;
-import com.example.myapplication.Friends.FriendAdapter;
-import com.example.myapplication.Network.Api;
-import com.example.myapplication.Network.ApiService;
+import com.example.myapplication.R;
+import com.example.myapplication.models.Movie;
+import com.example.myapplication.adapters.MovieAdapter;
+import com.example.myapplication.network.Api;
+import com.example.myapplication.network.ApiService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +23,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FavouritesFragment extends Fragment {
 

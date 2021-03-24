@@ -1,7 +1,7 @@
-package com.example.myapplication.Network;
+package com.example.myapplication.network;
 
-import com.example.myapplication.Favorites.Movie;
-import com.example.myapplication.Friends.Friend;
+import com.example.myapplication.models.Movie;
+import com.example.myapplication.models.Friend;
 
 import java.util.List;
 

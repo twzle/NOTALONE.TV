@@ -1,29 +1,15 @@
-package com.example.myapplication;
+package com.example.myapplication.views;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import tech.gusavila92.websocketclient.WebSocketClient;
+import com.example.myapplication.R;
 
 public class SupportActivity extends BaseActivity implements View.OnClickListener{
     MainActivity main = new MainActivity();

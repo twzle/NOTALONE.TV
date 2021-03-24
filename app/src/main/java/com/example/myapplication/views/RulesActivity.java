@@ -1,9 +1,11 @@
-package com.example.myapplication;
+package com.example.myapplication.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.example.myapplication.R;
 
 public class RulesActivity extends AppCompatActivity {
 

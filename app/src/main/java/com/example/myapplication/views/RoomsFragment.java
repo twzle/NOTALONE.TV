@@ -1,11 +1,9 @@
-package com.example.myapplication;
+package com.example.myapplication.views;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,16 +14,17 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Friends.Friend;
-import com.example.myapplication.Friends.FriendAdapter;
-import com.example.myapplication.Network.Api;
-import com.example.myapplication.Network.ApiService;
+import com.example.myapplication.R;
+import com.example.myapplication.models.Friend;
+import com.example.myapplication.adapters.FriendAdapter;
+import com.example.myapplication.network.Api;
+import com.example.myapplication.network.ApiService;
+import com.example.myapplication.utilities.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,14 +32,13 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RoomsFragment extends Fragment{
 
     RecyclerView mRecyclerView;
     FriendAdapter mfriendAdapter;
     TextView emptyList;
+    Utils mUtils;
 
     @Nullable
     @Override
@@ -111,7 +109,7 @@ public class RoomsFragment extends Fragment{
                 friends=response.body();
 
                 for (Friend friend : friends) {
-                    Bitmap icon = getBitmapFromVectorDrawable(getContext(),R.drawable.ic_profile);
+                    Bitmap icon = mUtils.getBitmapFromVectorDrawable(getContext(),R.drawable.ic_profile);
                     friend.setImg(icon);
                 }
                 DisplayUserList(friends, view);
@@ -141,21 +139,6 @@ public class RoomsFragment extends Fragment{
         }
     }
 
-
-    public static Bitmap getBitmapFromVectorDrawable(Context context, int drawableId) {
-        Drawable drawable = ContextCompat.getDrawable(context, drawableId);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            drawable = (DrawableCompat.wrap(drawable)).mutate();
-        }
-
-        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
-                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-        drawable.draw(canvas);
-
-        return bitmap;
-    }
 
 }
 

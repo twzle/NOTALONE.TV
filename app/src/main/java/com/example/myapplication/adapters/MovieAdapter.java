@@ -1,4 +1,4 @@
-package com.example.myapplication.Favorites;
+package com.example.myapplication.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,11 +9,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.AboutActivity;
-import com.example.myapplication.FavouritesFragment;
-import com.example.myapplication.Friends.Friend;
-import com.example.myapplication.Friends.FriendHolder;
-import com.example.myapplication.ProfileActivity;
+import com.example.myapplication.views.AboutActivity;
+import com.example.myapplication.models.Movie;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
