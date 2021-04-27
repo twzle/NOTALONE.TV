@@ -15,7 +15,7 @@
         <RelativeLayout
             android:id="@+id/MovieField"
             android:layout_width="match_parent"
-            android:layout_height="205dp"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
 
             android:padding="5dp">
@@ -25,6 +25,7 @@
                 android:layout_width="120dp"
                 android:layout_height="180dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="12.5dp"
                 android:src="@mipmap/ic_launcher"
                 android:background="@drawable/favorites_fields"/>
 
@@ -82,7 +83,7 @@
                 android:textColor="@color/white"
                 android:textSize="17sp" />
             <TextView
-                android:id="@+id/iv_country"
+                android:id="@+id/iv_date"
                 android:layout_below="@+id/iv_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,12 +92,12 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/lato_black"
                 android:textStyle="bold"
-                android:text="@string/country"
+                android:text="Добавлено: "
                 android:textColor="@color/white"
                 android:textSize="17sp" />
             <TextView
                 android:id="@+id/iv_genre"
-                android:layout_below="@+id/iv_country"
+                android:layout_below="@+id/iv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/iv_movie_catalogue_img"
@@ -114,7 +115,7 @@
                 android:layout_below="@id/iv_movie_catalogue_img"
                 android:layout_marginLeft="20dp"
                 android:layout_toEndOf="@id/iv_movie_catalogue_img"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="25dp"
                 android:alpha="0.8"
                 android:layout_marginRight="25dp"
                 android:background="@drawable/green_lines" />

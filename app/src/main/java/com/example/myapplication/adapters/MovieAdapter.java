@@ -34,8 +34,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MovieHolder holder, int position) {
-        holder.mMoviename.setText(Movies_watchLater.get(position).getMoviename());
+        holder.mMoviename.setText(Movies_watchLater.get(position).getTitle());
         holder.mImageView.setImageResource(Movies_watchLater.get(position).getMovieImg());
+        holder.mKinopoisk.setText(String.format("Кинопоиск: %s", Float.toString(Movies_watchLater.get(position).getKinopoisk())));
+        holder.mIMDB.setText(String.format("IMBD: %s", Float.toString(Movies_watchLater.get(position).getImdb())));
+        holder.mGenres.setText(String.format("Жанры: %s", Movies_watchLater.get(position).getGenres()));
+        holder.mYear.setText(String.format("Год: %s", Integer.toString(Movies_watchLater.get(position).getYear())));
+        holder.mDate.setText(String.format("Добавлено: %s", Movies_watchLater.get(position).getDate_update()));
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

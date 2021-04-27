@@ -16,6 +16,7 @@ import com.example.myapplication.models.Movie;
 import com.example.myapplication.adapters.MovieAdapter;
 import com.example.myapplication.network.Api;
 import com.example.myapplication.network.ApiService;
+import com.example.myapplication.responses.MovieResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,61 +40,33 @@ public class FavouritesFragment extends Fragment {
     }
 
 
-    private ArrayList<Movie> getMovieList(){
-
-        ArrayList<Movie> movies = new ArrayList<>();
-        Movie movie = new Movie();
-        movie.setMoviename("Джокер");
-        movie.setMovieImg(R.drawable.ic_profile);
-        movies.add(movie);
-
-        movie = new Movie();
-        movie.setMoviename("Идеальные незнакомцы");
-        movie.setMovieImg(R.drawable.ic_profile);
-        movies.add(movie);
-
-        movie = new Movie();
-        movie.setMoviename("А в душе я танцую");
-        movie.setMovieImg(R.drawable.ic_profile);
-        movies.add(movie);
-
-        movie = new Movie();
-        movie.setMoviename("1000 слов");
-        movie.setMovieImg(R.drawable.ic_profile);
-        movies.add(movie);
-
-
-        return movies;
-    }
-
     private void LoadDetails(View view){
         ApiService apiService = new ApiService();
-        Api api = apiService.getApiService().create(Api.class);
-        Call<List<Movie>> call = api.getMovies();
+        Api api = apiService.getNotAloneApiService().create(Api.class);
+        Call<MovieResponse> call = api.getCatalogNewest("odsu6JggH90Z1D69AVCw", 1);
 
-        call.enqueue(new Callback<List<Movie>>() {
+        call.enqueue(new Callback<MovieResponse>() {
             @Override
-            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                List<Movie> movies = null;
-                movies=response.body();
+            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
+                MovieResponse m_response=response.body();
+                List<Movie> movies = m_response.getData();
 
                 int count = 0;
                 for (Movie movie : movies) {
                     movie.setMovieImg(R.drawable.ic_profile);
                 }
-                DisplayUserList(movies, view);
+                DisplayMovieList(movies, view);
             }
 
             @Override
-            public void onFailure(Call<List<Movie>> call, Throwable t) {
+            public void onFailure(Call<MovieResponse> call, Throwable t) {
 
             }
         });
         return;
     }
 
-    private void DisplayUserList(List<Movie> movies, View view){
-        movies = movies.subList(0,15);
+    private void DisplayMovieList(List<Movie> movies, View view){
         ArrayList<Movie> movieList = new ArrayList<Movie>();
         movieList.addAll(movies);
 

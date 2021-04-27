@@ -10,8 +10,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.models.Friend;
+import com.example.myapplication.models.User;
+import com.example.myapplication.network.Api;
+import com.example.myapplication.network.ApiService;
+import com.example.myapplication.responses.UserResponse;
 import com.example.myapplication.utilities.Utils;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProfileActivity extends BaseActivity implements  View.OnClickListener {
 
@@ -35,6 +42,8 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
             nickname.setText("Guest");
             status.setText(Long.toString(Utils.getGuestId()));
         }
+
+        LoadDetails();
 
     }
 
@@ -64,6 +73,30 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
                 startActivity(new Intent(ProfileActivity.this, SupportActivity.class));
                 break;
         }
+    }
+
+    private  void LoadDetails(){
+        ApiService apiService = new ApiService();
+        Api api = apiService.getNotAloneApiService().create(Api.class);
+        Call<UserResponse> call = api.getUser("odsu6JggH90Z1D69AVCw", 37777);
+
+        call.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                UserResponse u_response =response.body();
+                User user = u_response.getData();
+                TextView nickname = (TextView) findViewById(R.id.nickname_reg);
+                TextView status = (TextView) findViewById(R.id.statusText);
+                nickname.setText(user.getNickname());
+                status.setText(user.getLogin());
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+
+            }
+        });
+        return;
     }
 
     public void onInitializeButtons(){
