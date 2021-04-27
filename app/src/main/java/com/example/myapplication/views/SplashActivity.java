@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.myapplication.R;
+import com.example.myapplication.utilities.Utils;
 
 public class SplashActivity extends BaseActivity {
 
@@ -18,6 +19,9 @@ public class SplashActivity extends BaseActivity {
         FullScreencall();
 
         getSupportActionBar().hide();
+
+        Utils utils = new Utils();
+        utils.getGuestId();
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

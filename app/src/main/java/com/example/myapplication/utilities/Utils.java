@@ -9,6 +9,8 @@ import android.os.Build;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Utils {
 
     public static Bitmap getBitmapFromVectorDrawable(Context context, int drawableId) {
@@ -24,5 +26,16 @@ public class Utils {
         drawable.draw(canvas);
 
         return bitmap;
+    }
+
+    public static long getUnixTime(){
+        return System.currentTimeMillis() / 1000;
+    }
+
+    public static long getGuestId(){
+        int random = ThreadLocalRandom.current().nextInt(10000, 99999);
+        long time = getUnixTime();
+        long result = Long.valueOf(Integer.toString(random) + Long.toString(time));
+        return result;
     }
 }

@@ -16,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -97,7 +99,7 @@ public class RoomsFragment extends Fragment{
         return friends;
     }
 
-    private void LoadDetails(View view){
+    private  void LoadDetails(View view){
         ApiService apiService = new ApiService();
         Api api = apiService.getApiService().create(Api.class);
         Call<List<Friend>> call = api.getFriends();

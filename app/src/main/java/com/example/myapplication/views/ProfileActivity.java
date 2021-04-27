@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.models.Friend;
+import com.example.myapplication.utilities.Utils;
 
 public class ProfileActivity extends BaseActivity implements  View.OnClickListener {
 
@@ -27,6 +28,13 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
         this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
 
         onInitializeButtons();
+
+        if (getIntent().getExtras()==null) {
+            TextView nickname = (TextView) findViewById(R.id.nickname_reg);
+            TextView status = (TextView) findViewById(R.id.statusText);
+            nickname.setText("Guest");
+            status.setText(Long.toString(Utils.getGuestId()));
+        }
 
     }
 
