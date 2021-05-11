@@ -2,12 +2,26 @@ package com.example.myapplication.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.models.AuthInformation;
+import com.example.myapplication.models.Movie;
+import com.example.myapplication.network.Api;
+import com.example.myapplication.network.ApiService;
+import com.example.myapplication.responses.AuthResponse;
+import com.example.myapplication.responses.MovieResponse;
+
+import java.io.Serializable;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AuthActivity extends BaseActivity implements View.OnClickListener {
 
@@ -28,10 +42,13 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        EditText login_text = findViewById(R.id.login_reg);
+        EditText password_text = findViewById(R.id.pass);
+        String login = login_text.getText().toString();
+        String password = password_text.getText().toString();
         switch(v.getId()){
             case R.id.button_enter:
-                TextView textView = (TextView)findViewById(R.id.no_access);
-                textView.setVisibility(View.VISIBLE);
+                getAuthorized(login, password);
                 break;
             case R.id.button_enter_as :
                 startActivity(new Intent(AuthActivity.this, MainActivity.class));
@@ -42,6 +59,39 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
                 finish();
                 break;
         }
+    }
+
+    public void getAuthorized(String login, String password){
+        ApiService apiService = new ApiService();
+        Api api = apiService.getNotAloneApiService().create(Api.class);
+        Call<AuthResponse> call = api.auth("odsu6JggH90Z1D69AVCw", login, password, null, null, null);
+
+        boolean auth_result = false;
+
+        call.enqueue(new Callback<AuthResponse>() {
+            @Override
+            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+                if (response.body() != null) {
+                    AuthInformation information = response.body().getData();
+                    if (response.body().isResult()) {
+                        Intent intent = new Intent(AuthActivity.this, MainActivity.class);
+                        intent.putExtra("TOKEN", response.body().getData().getToken());
+                        intent.putExtra("ID", response.body().getData().getId());
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        System.out.print("Error");
+                    }
+                } else
+                    System.out.print("Error");
+            }
+
+            @Override
+            public void onFailure(Call<AuthResponse> call, Throwable t) {
+                Log.e("Error",t.getMessage());
+            }
+        });
+        return;
     }
 
     public void onInitializeButtons(){

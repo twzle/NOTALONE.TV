@@ -10,11 +10,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.utilities.Utils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends BaseActivity {
+    String TOKEN = null;
+    Integer ID = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,11 @@ public class MainActivity extends BaseActivity {
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_person_30);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (getIntent().getExtras()!=null) {
+            TOKEN = getIntent().getExtras().get("TOKEN").toString();
+            ID = getIntent().getExtras().getInt("ID");
+        }
 
         OnClickListener oclBtnOk = new OnClickListener() {
             @Override
@@ -76,6 +86,8 @@ public class MainActivity extends BaseActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                intent.putExtra("TOKEN", TOKEN);
+                intent.putExtra("ID", ID);
                 startActivity(intent);
                 break;
         }

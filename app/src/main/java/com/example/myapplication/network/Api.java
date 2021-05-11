@@ -2,6 +2,7 @@ package com.example.myapplication.network;
 
 import com.example.myapplication.models.Movie;
 import com.example.myapplication.models.Friend;
+import com.example.myapplication.responses.AuthResponse;
 import com.example.myapplication.responses.MovieResponse;
 import com.example.myapplication.responses.UserResponse;
 
@@ -26,5 +27,9 @@ public interface Api {
     @FormUrlEncoded
     @POST("getCatalogNewest")
     Call<MovieResponse> getCatalogNewest(@Field("apiKey") String apiKey, @Field("page") int page);
+
+    @FormUrlEncoded
+    @POST("auth")
+    Call<AuthResponse> auth(@Field("apiKey") String apiKey, @Field("login") String login, @Field("password") String password, @Field("vk_id") String vk_id, @Field("fb_id") String fb_id, @Field("g_id") String g_id);
 
 }

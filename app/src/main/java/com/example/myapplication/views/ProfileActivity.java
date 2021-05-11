@@ -21,6 +21,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ProfileActivity extends BaseActivity implements  View.OnClickListener {
+    String TOKEN = null;
+    Integer ID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +38,18 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
 
         onInitializeButtons();
 
-        if (getIntent().getExtras()==null) {
+        if (getIntent().getExtras()!=null) {
+            TOKEN = getIntent().getExtras().get("TOKEN").toString();
+            ID = getIntent().getExtras().getInt("ID");
+        } else {
             TextView nickname = (TextView) findViewById(R.id.nickname_reg);
             TextView status = (TextView) findViewById(R.id.statusText);
             nickname.setText("Guest");
             status.setText(Long.toString(Utils.getGuestId()));
         }
 
-        LoadDetails();
+        if (ID!=null)
+            LoadDetails(ID);
 
     }
 
@@ -75,10 +81,10 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
         }
     }
 
-    private  void LoadDetails(){
+    private  void LoadDetails(int id){
         ApiService apiService = new ApiService();
         Api api = apiService.getNotAloneApiService().create(Api.class);
-        Call<UserResponse> call = api.getUser("odsu6JggH90Z1D69AVCw", 37777);
+        Call<UserResponse> call = api.getUser("odsu6JggH90Z1D69AVCw", id);
 
         call.enqueue(new Callback<UserResponse>() {
             @Override
