@@ -80,15 +80,15 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
                         startActivity(intent);
                         finish();
                     } else {
-                        System.out.print("Error");
+                        Log.e("TAG", "NUll");
                     }
                 } else
-                    System.out.print("Error");
+                    Log.e("TAG", "NUll");
             }
 
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
-                Log.e("Error",t.getMessage());
+                Log.e("Error", t.getMessage());
             }
         });
         return;

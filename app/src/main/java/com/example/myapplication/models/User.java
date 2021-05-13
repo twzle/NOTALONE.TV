@@ -28,7 +28,7 @@ public class User {
 
     private int mark;
 
-    private class Ban{
+    public class Ban{
         private boolean status;
         private String reason;
 
@@ -54,7 +54,7 @@ public class User {
         }
     }
 
-    private class Settings{
+    public class Settings{
         private boolean rooms_public;
         private boolean message_audio;
         private String site_background;
@@ -100,7 +100,7 @@ public class User {
         }
     }
 
-    private class Socials{
+    public class Socials{
         private String vk_id;
         private String fb_id;
         private String g_id;
@@ -136,7 +136,7 @@ public class User {
         }
     }
 
-    private class Privilege{
+    public class Privilege{
         private int premium_end;
         private int donate_amount;
 
@@ -162,9 +162,9 @@ public class User {
         }
     }
 
-    private class Info{
+    public class Info{
         private String gender;
-        private int avatarID;
+        private String avatar;
         private int date_reg;
         private boolean email_confirm;
 
@@ -176,12 +176,12 @@ public class User {
             this.gender = gender;
         }
 
-        public int getAvatarID() {
-            return avatarID;
+        public String getAvatarID() {
+            return avatar;
         }
 
         public void setAvatarID(int avatarID) {
-            this.avatarID = avatarID;
+            this.avatar = avatar;
         }
 
         public int getDate_reg() {
@@ -202,7 +202,7 @@ public class User {
 
         public Info(String gender, int avatarID, int date_reg, boolean email_confirm) {
             this.gender = gender;
-            this.avatarID = avatarID;
+            this.avatar = avatar;
             this.date_reg = date_reg;
             this.email_confirm = email_confirm;
         }
@@ -254,6 +254,10 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Info getInfo() {
+        return info;
     }
 }
 

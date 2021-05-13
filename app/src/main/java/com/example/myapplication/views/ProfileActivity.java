@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.models.User;
 import com.example.myapplication.network.Api;
@@ -24,6 +27,8 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
     String TOKEN = null;
     Integer ID = null;
 
+    ImageView avatar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +43,7 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
 
         onInitializeButtons();
 
-        if (getIntent().getExtras()!=null) {
+        if (getIntent().getExtras().get("TOKEN") != null && getIntent().getExtras().get("ID") != null) {
             TOKEN = getIntent().getExtras().get("TOKEN").toString();
             ID = getIntent().getExtras().getInt("ID");
         } else {
@@ -47,6 +52,9 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
             nickname.setText("Guest");
             status.setText(Long.toString(Utils.getGuestId()));
         }
+
+
+        avatar = findViewById(R.id.image_profile);
 
         if (ID!=null)
             LoadDetails(ID);
@@ -89,17 +97,31 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                UserResponse u_response =response.body();
-                User user = u_response.getData();
-                TextView nickname = (TextView) findViewById(R.id.nickname_reg);
-                TextView status = (TextView) findViewById(R.id.statusText);
-                nickname.setText(user.getNickname());
-                status.setText(user.getLogin());
+                if (response.code()==200) {
+                    UserResponse u_response = response.body();
+                    User user = u_response.getData();
+                    TextView nickname = (TextView) findViewById(R.id.nickname_reg);
+                    TextView status = (TextView) findViewById(R.id.statusText);
+                    nickname.setText(user.getNickname());
+                    status.setText(user.getLogin());
+
+                    Glide.with(avatar.getContext())
+                            .load("https://notalone.tv" +user.getInfo().getAvatarID())
+                            .placeholder(R.drawable.ic_profile)
+                            .into(avatar);
+
+                }
+
+                Log.v("TAG", Integer.toString(response.code()) + "\t" + response.message());
+
+                System.out.println(Integer.toString(response.code()) + "\t" + response.message());
             }
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
+                Log.v("TAG", t.getMessage());
 
+                System.out.println(t.getMessage());
             }
         });
         return;
