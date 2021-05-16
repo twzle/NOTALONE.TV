@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.models.Movie;
-import com.example.myapplication.adapters.MovieAdapter;
+import com.example.myapplication.adapters.FavouriteMovieAdapter;
 import com.example.myapplication.network.Api;
 import com.example.myapplication.network.ApiService;
 import com.example.myapplication.responses.MovieResponse;
@@ -28,7 +28,7 @@ import retrofit2.Response;
 public class FavouritesFragment extends Fragment {
 
     RecyclerView mRecyclerView;
-    MovieAdapter mMovieAdapter;
+    FavouriteMovieAdapter mMovieAdapter;
     TextView emptyList;
 
     @Nullable
@@ -74,7 +74,7 @@ public class FavouritesFragment extends Fragment {
         emptyList= view.findViewById(R.id.empty_recycler_view_movies);
         mRecyclerView= view.findViewById(R.id.recyclerview_watch_later);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        mMovieAdapter = new MovieAdapter(this.getContext(), movieList);
+        mMovieAdapter = new FavouriteMovieAdapter(this.getContext(), movieList);
         mRecyclerView.setAdapter(mMovieAdapter);
 
         if (!movieList.isEmpty()){

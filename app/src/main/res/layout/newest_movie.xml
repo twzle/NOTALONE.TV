@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerview_online_card"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/dark"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+        <RelativeLayout
+            android:id="@+id/NewestMovieField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/iv_newest_movieimg"
+
+                android:layout_centerHorizontal="true"
+                android:layout_width="120dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="2dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
+                android:background="@drawable/favorites_fields"/>
+
+            <TextView
+                android:id="@+id/iv_newest_moviename"
+
+                android:layout_centerHorizontal="true"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_newest_movieimg"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/lato_black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/moviename"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:maxLines="2"
+                android:minLines="1"
+                android:ellipsize="end"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

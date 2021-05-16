@@ -22,6 +22,7 @@ import com.example.myapplication.utilities.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observer;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,6 +40,8 @@ public class RoomsFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rooms, container, false);
         LoadDetails(view);
+
+
         return view;
     }
 
