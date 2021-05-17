@@ -17,25 +17,25 @@ import com.example.myapplication.views.AboutActivity;
 
 import java.util.ArrayList;
 
-public class NewestMovieAdapter extends RecyclerView.Adapter<NewestMovieHolder> {
+public class CatalogueMovieAdapter extends RecyclerView.Adapter<CatalogueMovieHolder> {
 
     Context c;
     ArrayList<Movie> newest_movies;
 
-    public NewestMovieAdapter(Context c, ArrayList<Movie> Movies_watchLater) {
+    public CatalogueMovieAdapter(Context c, ArrayList<Movie> Movies_watchLater) {
         this.c = c;
         this.newest_movies = Movies_watchLater;
     }
 
     @NonNull
     @Override
-    public NewestMovieHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.newest_movie, null);
-        return new NewestMovieHolder(view);
+    public CatalogueMovieHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.catalogue_movie_resource, null);
+        return new CatalogueMovieHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewestMovieHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CatalogueMovieHolder holder, int position) {
         holder.mMoviename.setText(newest_movies.get(position).getTitle());
 
         Glide.with(holder.itemView.getContext())

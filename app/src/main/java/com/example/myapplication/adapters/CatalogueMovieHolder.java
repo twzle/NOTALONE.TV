@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 
-public class NewestMovieHolder extends RecyclerView.ViewHolder {
+public class CatalogueMovieHolder extends RecyclerView.ViewHolder {
 
     ImageView mImageView;
     TextView mMoviename;
 
-    public NewestMovieHolder(@NonNull View itemView) {
+    public CatalogueMovieHolder(@NonNull View itemView) {
         super(itemView);
         this.mImageView=itemView.findViewById(R.id.iv_newest_movieimg);
         this.mMoviename=itemView.findViewById(R.id.iv_newest_moviename);

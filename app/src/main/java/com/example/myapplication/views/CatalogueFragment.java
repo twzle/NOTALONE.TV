@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.adapters.NewestMovieAdapter;
+import com.example.myapplication.adapters.CatalogueMovieAdapter;
 import com.example.myapplication.models.Movie;
 import com.example.myapplication.network.Api;
 import com.example.myapplication.network.ApiService;
@@ -28,18 +28,19 @@ import retrofit2.Response;
 public class CatalogueFragment extends Fragment {
 
     RecyclerView mRecyclerView;
-    NewestMovieAdapter mMovieAdapter;
+    CatalogueMovieAdapter mMovieAdapter;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_catalogue, container, false);
-        LoadDetails(view);
+        LoadNewestMovies(view);
+        LoadPopularMovies(view);
         return view;
     }
 
-    private void LoadDetails(View view){
+    private void LoadNewestMovies(View view){
         ApiService apiService = new ApiService();
         Api api = apiService.getNotAloneApiService().create(Api.class);
         Call<MovieResponse> call = api.getCatalogNewest("odsu6JggH90Z1D69AVCw", 1);
@@ -53,7 +54,7 @@ public class CatalogueFragment extends Fragment {
                 for (Movie movie : movies) {
                     movie.setMovieImg(R.drawable.ic_profile);
                 }
-                DisplayMovieList(movies, view);
+                DisplayNewestMovies(movies, view);
             }
 
             @Override
@@ -64,13 +65,48 @@ public class CatalogueFragment extends Fragment {
         return;
     }
 
-    private void DisplayMovieList(List<Movie> movies, View view){
+    private void LoadPopularMovies(View view){
+        ApiService apiService = new ApiService();
+        Api api = apiService.getNotAloneApiService().create(Api.class);
+        Call<MovieResponse> call = api.getCatalogPopular("odsu6JggH90Z1D69AVCw", 1);
+
+        call.enqueue(new Callback<MovieResponse>() {
+            @Override
+            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
+                MovieResponse m_response=response.body();
+                List<Movie> movies = m_response.getData();
+
+                for (Movie movie : movies) {
+                    movie.setMovieImg(R.drawable.ic_profile);
+                }
+                DisplayPopularMovies(movies, view);
+            }
+
+            @Override
+            public void onFailure(Call<MovieResponse> call, Throwable t) {
+
+            }
+        });
+        return;
+    }
+
+    private void DisplayNewestMovies(List<Movie> movies, View view){
         ArrayList<Movie> movieList = new ArrayList<Movie>();
         movieList.addAll(movies);
 
         mRecyclerView= view.findViewById(R.id.recyclerview_newest_movies);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false));
-        mMovieAdapter = new NewestMovieAdapter(this.getContext(), movieList);
+        mMovieAdapter = new CatalogueMovieAdapter(this.getContext(), movieList);
+        mRecyclerView.setAdapter(mMovieAdapter);
+    }
+
+    private void DisplayPopularMovies(List<Movie> movies, View view){
+        ArrayList<Movie> movieList = new ArrayList<Movie>();
+        movieList.addAll(movies);
+
+        mRecyclerView= view.findViewById(R.id.recyclerview_popular_movies);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false));
+        mMovieAdapter = new CatalogueMovieAdapter(this.getContext(), movieList);
         mRecyclerView.setAdapter(mMovieAdapter);
     }
 }
