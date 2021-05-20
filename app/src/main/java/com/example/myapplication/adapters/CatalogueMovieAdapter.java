@@ -16,13 +16,14 @@ import com.example.myapplication.models.Movie;
 import com.example.myapplication.views.AboutActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CatalogueMovieAdapter extends RecyclerView.Adapter<CatalogueMovieHolder> {
 
     Context c;
-    ArrayList<Movie> newest_movies;
+    List<Movie> newest_movies;
 
-    public CatalogueMovieAdapter(Context c, ArrayList<Movie> Movies_watchLater) {
+    public CatalogueMovieAdapter(Context c, List<Movie> Movies_watchLater) {
         this.c = c;
         this.newest_movies = Movies_watchLater;
     }

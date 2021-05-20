@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,7 @@ import com.example.myapplication.models.Movie;
 import com.example.myapplication.network.Api;
 import com.example.myapplication.network.ApiService;
 import com.example.myapplication.responses.MovieResponse;
+import com.example.myapplication.viewmodels.CatalogueViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,86 +29,71 @@ import retrofit2.Response;
 
 public class CatalogueFragment extends Fragment {
 
-    RecyclerView mRecyclerView;
-    CatalogueMovieAdapter mMovieAdapter;
+    RecyclerView newestMoviesRecyclerView;
+    RecyclerView popularMoviesRecyclerView;
+
+    CatalogueMovieAdapter newestMoviesAdapter;
+    CatalogueMovieAdapter popularMoviesAdapter;
+
+    private CatalogueViewModel catalogueViewModel;
+    List<Movie> newestMovies = new ArrayList<Movie>();
+    List<Movie> popularMovies = new ArrayList<Movie>();
+
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_catalogue, container, false);
-        LoadNewestMovies(view);
-        LoadPopularMovies(view);
+        catalogueViewModel = new ViewModelProvider(requireActivity()).get(CatalogueViewModel.class);
+        doInitialization(view);
+
+        getNewestMovies();
+        getPopularMovies();
         return view;
     }
 
-    private void LoadNewestMovies(View view){
-        ApiService apiService = new ApiService();
-        Api api = apiService.getNotAloneApiService().create(Api.class);
-        Call<MovieResponse> call = api.getCatalogNewest("odsu6JggH90Z1D69AVCw", 1);
+    private void doInitialization(View view){
+        newestMoviesRecyclerView = view.findViewById(R.id.recyclerview_newest_movies);
+        newestMoviesRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false));
+        newestMoviesAdapter = new CatalogueMovieAdapter(this.getContext(), newestMovies);
+        newestMoviesRecyclerView.setAdapter(newestMoviesAdapter);
 
-        call.enqueue(new Callback<MovieResponse>() {
-            @Override
-            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
-                MovieResponse m_response=response.body();
-                List<Movie> movies = m_response.getData();
+        popularMoviesRecyclerView = view.findViewById(R.id.recyclerview_popular_movies);
+        popularMoviesRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false));
+        popularMoviesAdapter = new CatalogueMovieAdapter(this.getContext(), popularMovies);
+        popularMoviesRecyclerView.setAdapter(popularMoviesAdapter);
+    }
 
-                for (Movie movie : movies) {
-                    movie.setMovieImg(R.drawable.ic_profile);
+    private void getNewestMovies(){
+        catalogueViewModel.getNewestMovies().observe(getViewLifecycleOwner(), newestMoviesResponse -> {
+            if (newestMoviesResponse != null){
+                if (newestMoviesResponse.getData() != null){
+                    List<Movie> movies = newestMoviesResponse.getData();
+
+                    for (Movie movie : movies) {
+                        movie.setMovieImg(R.drawable.ic_profile);
+                    }
+                    newestMovies.addAll(movies);
+                    newestMoviesAdapter.notifyDataSetChanged();
                 }
-                DisplayNewestMovies(movies, view);
-            }
-
-            @Override
-            public void onFailure(Call<MovieResponse> call, Throwable t) {
-
             }
         });
-        return;
     }
 
-    private void LoadPopularMovies(View view){
-        ApiService apiService = new ApiService();
-        Api api = apiService.getNotAloneApiService().create(Api.class);
-        Call<MovieResponse> call = api.getCatalogPopular("odsu6JggH90Z1D69AVCw", 1);
+    private void getPopularMovies(){
+        catalogueViewModel.getPopularMovies().observe(getViewLifecycleOwner(), popularMoviesResponse -> {
+            if (popularMoviesResponse != null){
+                if (popularMoviesResponse.getData() != null){
+                    List<Movie> movies = popularMoviesResponse.getData();
 
-        call.enqueue(new Callback<MovieResponse>() {
-            @Override
-            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
-                MovieResponse m_response=response.body();
-                List<Movie> movies = m_response.getData();
-
-                for (Movie movie : movies) {
-                    movie.setMovieImg(R.drawable.ic_profile);
+                    for (Movie movie : movies) {
+                        movie.setMovieImg(R.drawable.ic_profile);
+                    }
+                    popularMovies.addAll(movies);
+                    popularMoviesAdapter.notifyDataSetChanged();
                 }
-                DisplayPopularMovies(movies, view);
-            }
-
-            @Override
-            public void onFailure(Call<MovieResponse> call, Throwable t) {
-
             }
         });
-        return;
-    }
-
-    private void DisplayNewestMovies(List<Movie> movies, View view){
-        ArrayList<Movie> movieList = new ArrayList<Movie>();
-        movieList.addAll(movies);
-
-        mRecyclerView= view.findViewById(R.id.recyclerview_newest_movies);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false));
-        mMovieAdapter = new CatalogueMovieAdapter(this.getContext(), movieList);
-        mRecyclerView.setAdapter(mMovieAdapter);
-    }
-
-    private void DisplayPopularMovies(List<Movie> movies, View view){
-        ArrayList<Movie> movieList = new ArrayList<Movie>();
-        movieList.addAll(movies);
-
-        mRecyclerView= view.findViewById(R.id.recyclerview_popular_movies);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false));
-        mMovieAdapter = new CatalogueMovieAdapter(this.getContext(), movieList);
-        mRecyclerView.setAdapter(mMovieAdapter);
     }
 }
