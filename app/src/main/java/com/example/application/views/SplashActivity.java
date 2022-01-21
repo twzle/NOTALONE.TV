@@ -7,6 +7,8 @@ import android.os.Handler;
 import com.example.application.R;
 import com.example.application.utilities.Utils;
 
+import java.util.Objects;
+
 public class SplashActivity extends BaseActivity {
 
 //    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -18,10 +20,9 @@ public class SplashActivity extends BaseActivity {
 
         FullScreencall();
 
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
-        Utils utils = new Utils();
-        utils.getGuestId();
+        Utils.getGuestId();
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
