@@ -38,4 +38,15 @@ public class Utils {
         long result = Long.valueOf(Integer.toString(random) + Long.toString(time));
         return result;
     }
+
+    public static String checkLinkEntry(String entry, String link) {
+        String result;
+        if (!link.contains(entry)) {
+            result = entry.concat(link);
+        }
+        else {
+            result = link;
+        }
+        return result;
+    }
 }

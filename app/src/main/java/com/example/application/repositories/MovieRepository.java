@@ -31,13 +31,13 @@ public class MovieRepository {
             @Override
             public void onResponse(@NonNull Call<MovieResponse> call,@NonNull Response<MovieResponse> response) {
                     data.setValue(response.body());
-                    Log.v("Error", response.message());
+                    Log.v("Newest Movies Loading Success", response.message());
             }
 
             @Override
             public void onFailure(@NonNull Call<MovieResponse> call,@NonNull Throwable t) {
                     data.setValue(null);
-                    Log.v("Error", t.getMessage());
+                    Log.v("Newest Movies Loading Error", t.getMessage());
             }
         });
         return data;
@@ -51,13 +51,13 @@ public class MovieRepository {
             @Override
             public void onResponse(@NonNull Call<MovieResponse> call,@NonNull Response<MovieResponse> response) {
                 data.setValue(response.body());
-                Log.v("Error", response.message());
+                Log.v("Popular Movies Loading Success", response.message());
             }
 
             @Override
             public void onFailure(@NonNull Call<MovieResponse> call,@NonNull Throwable t) {
                 data.setValue(null);
-                Log.v("Error", t.getMessage());
+                Log.v("Popular Movies Loading Error", t.getMessage());
             }
         });
         return data;

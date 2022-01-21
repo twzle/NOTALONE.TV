@@ -1,5 +1,6 @@
 package com.example.application.views;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -18,57 +19,33 @@ import androidx.lifecycle.ViewModelProviders;
 import com.bumptech.glide.Glide;
 import com.example.application.R;
 import com.example.application.models.User;
-import com.example.application.network.ApiService;
-import com.example.application.network.NotAloneApi;
-import com.example.application.responses.UserResponse;
 import com.example.application.utilities.Utils;
-import com.example.application.viewmodels.CatalogueViewModel;
+import com.example.application.viewmodels.UserViewModel;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import java.util.Objects;
 
 public class ProfileActivity extends BaseActivity implements  View.OnClickListener {
     String TOKEN = null;
     Integer ID = null;
 
     ImageView avatar;
+    TextView nickname;
+    TextView status;
 
-    CatalogueViewModel cvm;
+    UserViewModel userViewModel;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        cvm = new ViewModelProvider(this).get(CatalogueViewModel.class);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
-        setContentView(R.layout.activity_profile);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setElevation(0);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_close_30);
-
-        getWindow().setNavigationBarColor(getResources().getColor(R.color.dark));
-
-        this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
-
+        setupSystemInterfaceTools();
+        findViews();
         onInitializeButtons();
 
-        if (getIntent().getExtras().get("TOKEN") != null && getIntent().getExtras().get("ID") != null) {
-            TOKEN = getIntent().getExtras().get("TOKEN").toString();
-            ID = getIntent().getExtras().getInt("ID");
-        } else {
-            TextView nickname = (TextView) findViewById(R.id.nickname_reg);
-            TextView status = (TextView) findViewById(R.id.statusText);
-            nickname.setText("Guest");
-            status.setText(Long.toString(Utils.getGuestId()));
-        }
-
-
-        avatar = findViewById(R.id.image_profile);
-
-        if (ID!=null)
-            LoadDetails(ID);
-
+        checkIntent();
     }
 
 
@@ -83,6 +60,7 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch(v.getId()){
@@ -99,45 +77,60 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
         }
     }
 
-    private  void LoadDetails(int id){
-        ApiService apiService = new ApiService();
-        NotAloneApi api = apiService.getNotAloneApiService().create(NotAloneApi.class);
-        Call<UserResponse> call = api.getUser("odsu6JggH90Z1D69AVCw", id);
+    private void getUser(int userID) {
+        userViewModel.getUser(userID).observe(this, userResponse -> {
+            if (userResponse != null){
+                if (userResponse.getData() != null){
+                    User user = userResponse.getData();
 
-        call.enqueue(new Callback<UserResponse>() {
-            @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                if (response.code()==200) {
-                    UserResponse u_response = response.body();
-                    User user = u_response.getData();
+
                     TextView nickname = (TextView) findViewById(R.id.nickname_reg);
                     TextView status = (TextView) findViewById(R.id.statusText);
                     nickname.setText(user.getNickname());
                     status.setText(user.getLogin());
 
                     Glide.with(avatar.getContext())
-                            .load("https://notalone.tv" +user.getInfo().getAvatarID())
+                            .load(Utils.checkLinkEntry("https://notalone.tv", user.getInfo().getAvatarID()))
                             .placeholder(R.drawable.ic_profile)
                             .into(avatar);
-
                 }
-
-                Log.v("TAG", Integer.toString(response.code()) + "\t" + response.message());
-
-                System.out.println(Integer.toString(response.code()) + "\t" + response.message());
-            }
-
-            @Override
-            public void onFailure(Call<UserResponse> call, Throwable t) {
-                Log.v("TAG", t.getMessage());
-
-                System.out.println(t.getMessage());
             }
         });
-        return;
     }
 
-    public void onInitializeButtons(){
+    @SuppressLint("SetTextI18n")
+    private void checkIntent() {
+        if (getIntent().getExtras().get("TOKEN") != null && getIntent().getExtras().get("ID") != null) {
+            TOKEN = getIntent().getExtras().get("TOKEN").toString();
+            ID = getIntent().getExtras().getInt("ID");
+        } else {
+            nickname.setText("Guest");
+            status.setText(Long.toString(Utils.getGuestId()));
+        }
+
+        if (ID==null)
+            getUser(561758);
+    }
+
+    private void setupSystemInterfaceTools() {
+        setContentView(R.layout.activity_profile);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_close_30);
+
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.dark));
+
+        this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
+
+    }
+
+    private void findViews() {
+        nickname = (TextView) findViewById(R.id.nickname_reg);
+        status = (TextView) findViewById(R.id.statusText);
+        avatar = findViewById(R.id.image_profile);
+    }
+
+    private void onInitializeButtons(){
         final Button btn_lvl=(Button)findViewById(R.id.lvl);
         final Button btn_edit_profile=(Button)findViewById(R.id.edit_profile);
         final Button btn_subscribe=(Button)findViewById(R.id.subscribe);

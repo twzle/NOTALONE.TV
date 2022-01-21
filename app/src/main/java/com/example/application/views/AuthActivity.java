@@ -1,5 +1,6 @@
 package com.example.application.views;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +35,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
         FullScreencall();
     };
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         EditText login_text = findViewById(R.id.login_reg);
@@ -44,7 +46,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
             case R.id.button_enter:
                 getAuthorized(login, password);
                 break;
-            case R.id.button_enter_as :
+            case R.id.button_enter_as:
                 startActivity(new Intent(AuthActivity.this, MainActivity.class));
                 finish();
                 break;
@@ -69,8 +71,8 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
                     AuthInformation information = response.body().getData();
                     if (response.body().isResult()) {
                         Intent intent = new Intent(AuthActivity.this, MainActivity.class);
-                        intent.putExtra("TOKEN", response.body().getData().getToken());
-                        intent.putExtra("ID", response.body().getData().getId());
+                        intent.putExtra("TOKEN", information.getToken());
+                        intent.putExtra("ID", information.getId());
                         startActivity(intent);
                         finish();
                     } else {
