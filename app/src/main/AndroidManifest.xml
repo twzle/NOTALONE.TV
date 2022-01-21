@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.example.application">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".views.UserInformationActivity"
+            android:name="com.example.application.views.UserInformationActivity"
             android:label="Пользователь"
             android:theme="@style/dark"></activity>
-        <activity android:name=".views.SignInActivity"></activity>
+        <activity android:name="com.example.application.views.SignInActivity"></activity>
         <activity
-            android:name=".views.ProfileActivity"
+            android:name="com.example.application.views.ProfileActivity"
             android:label="Аккаунт"
             android:theme="@style/dark"></activity>
-        <activity android:name=".views.AuthActivity" /> <!-- SplashScreen activity -->
+        <activity android:name="com.example.application.views.AuthActivity" /> <!-- SplashScreen activity -->
         <activity
-            android:name=".views.SplashActivity"
+            android:name="com.example.application.views.SplashActivity"
             android:windowBackground="@color/gray">
 
             <!-- android:theme="@style/SplashTheme"> -->
@@ -34,19 +34,19 @@
             </intent-filter>
         </activity> <!-- ThirdActivity -->
         <activity
-            android:name=".views.RulesActivity"
+            android:name="com.example.application.views.RulesActivity"
             android:label="@string/title_activity_third" /> <!-- SecondActivity -->
         <activity
-            android:name=".views.SupportActivity"
+            android:name="com.example.application.views.SupportActivity"
             android:label="Поддержка"
             android:theme="@style/Theme.MyApplication"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
-            android:name=".views.AboutActivity"
+            android:name="com.example.application.views.AboutActivity"
             android:label="@string/title_activity_second"
             android:theme="@style/Theme.MyApplication" /> <!-- MainActivity -->
         <activity
-            android:name=".views.MainActivity"
+            android:name="com.example.application.views.MainActivity"
             android:label=""
             android:windowSoftInputMode="adjustPan">
 
