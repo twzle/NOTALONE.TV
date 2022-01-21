@@ -1,6 +1,6 @@
 package com.example.application.models;
 
-public class AuthInformation {
+public class Auth {
     private int id;
     private String login;
     private String nickname;
@@ -56,7 +56,7 @@ public class AuthInformation {
         this.email = email;
     }
 
-    public AuthInformation(int id, String login, String nickname, String token, String activity, String email) {
+    public Auth(int id, String login, String nickname, String token, String activity, String email) {
         this.id = id;
         this.login = login;
         this.nickname = nickname;

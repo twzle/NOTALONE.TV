@@ -45,7 +45,7 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
         findViews();
         onInitializeButtons();
 
-        checkIntent();
+        checkExtras();
     }
 
 
@@ -99,7 +99,7 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
     }
 
     @SuppressLint("SetTextI18n")
-    private void checkIntent() {
+    private void checkExtras() {
         if (getIntent().getExtras().get("TOKEN") != null && getIntent().getExtras().get("ID") != null) {
             TOKEN = getIntent().getExtras().get("TOKEN").toString();
             ID = getIntent().getExtras().getInt("ID");
@@ -108,8 +108,8 @@ public class ProfileActivity extends BaseActivity implements  View.OnClickListen
             status.setText(Long.toString(Utils.getGuestId()));
         }
 
-        if (ID==null)
-            getUser(561758);
+        if (ID!=null)
+            getUser(ID);
     }
 
     private void setupSystemInterfaceTools() {

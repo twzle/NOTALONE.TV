@@ -7,12 +7,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import androidx.lifecycle.ViewModelProvider;
+
+import com.bumptech.glide.Glide;
 import com.example.application.R;
-import com.example.application.models.AuthInformation;
+import com.example.application.models.Auth;
+import com.example.application.models.User;
 import com.example.application.network.ApiService;
 import com.example.application.network.NotAloneApi;
 import com.example.application.responses.AuthResponse;
+import com.example.application.utilities.Utils;
+import com.example.application.viewmodels.AuthViewModel;
+import com.example.application.viewmodels.UserViewModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,17 +28,19 @@ import retrofit2.Response;
 
 public class AuthActivity extends BaseActivity implements View.OnClickListener {
 
+    EditText login_text, password_text;
+    Button btn_login, btn_signin, btn_log_as;
+    AuthViewModel authViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_auth);
-        getSupportActionBar().hide();
-        this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        EditText v = findViewById(R.id.login_reg);
-        EditText g = findViewById(R.id.pass);
-        HideKeyboardEditText(v);
-        HideKeyboardEditText(g);
+
+        authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
+
+        setupSystemInterfaceTools();
+        findViews();
+        hideKeyboards();
         onInitializeButtons();
         FullScreencall();
     };
@@ -38,8 +48,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        EditText login_text = findViewById(R.id.login_reg);
-        EditText password_text = findViewById(R.id.pass);
         String login = login_text.getText().toString();
         String password = password_text.getText().toString();
         switch(v.getId()){
@@ -57,43 +65,52 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
-    public void getAuthorized(String login, String password){
-        ApiService apiService = new ApiService();
-        NotAloneApi api = apiService.getNotAloneApiService().create(NotAloneApi.class);
-        Call<AuthResponse> call = api.auth("odsu6JggH90Z1D69AVCw", login, password, null, null, null);
 
-        boolean auth_result = false;
-
-        call.enqueue(new Callback<AuthResponse>() {
-            @Override
-            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
-                if (response.body() != null) {
-                    AuthInformation information = response.body().getData();
-                    if (response.body().isResult()) {
-                        Intent intent = new Intent(AuthActivity.this, MainActivity.class);
-                        intent.putExtra("TOKEN", information.getToken());
-                        intent.putExtra("ID", information.getId());
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Log.e("TAG", "NUll");
-                    }
-                } else
-                    Log.e("TAG", "NUll");
-            }
-
-            @Override
-            public void onFailure(Call<AuthResponse> call, Throwable t) {
-                Log.e("Error", t.getMessage());
+    private void getAuthorized(String login, String password){
+        authViewModel.getAuth(login, password, null, null,null).observe(this, authResponse -> {
+            if (authResponse != null){
+                if (authResponse.getData() != null){
+                    Auth auth = authResponse.getData();
+                    createAuthIntention(auth);
+                }
             }
         });
-        return;
     }
 
-    public void onInitializeButtons(){
-        Button btn_login = (Button) findViewById(R.id.button_enter);
-        Button btn_signin=(Button) findViewById(R.id.button_reg);
-        Button btn_log_as=(Button) findViewById(R.id.button_enter_as);
+    private void createAuthIntention(Auth auth){
+        Intent intent = new Intent(AuthActivity.this, MainActivity.class);
+        intent.putExtra("TOKEN", auth.getToken());
+        intent.putExtra("ID", auth.getId());
+        startActivity(intent);
+        finish();
+    }
+
+    private void setupSystemInterfaceTools() {
+        setContentView(R.layout.activity_auth);
+        getSupportActionBar().hide();
+        this.getWindow().setStatusBarColor(this.getResources().getColor(R.color.dark));
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    }
+
+    private void hideKeyboards() {
+        HideKeyboardEditText(login_text);
+        HideKeyboardEditText(password_text);
+    }
+
+    private void findViews() {
+        login_text = findViewById(R.id.login_reg);
+        password_text = findViewById(R.id.pass);
+
+
+        btn_login = (Button) findViewById(R.id.button_enter);
+        btn_signin=(Button) findViewById(R.id.button_reg);
+        btn_log_as=(Button) findViewById(R.id.button_enter_as);
+    }
+
+    private void onInitializeButtons(){
+        btn_login = (Button) findViewById(R.id.button_enter);
+        btn_signin=(Button) findViewById(R.id.button_reg);
+        btn_log_as=(Button) findViewById(R.id.button_enter_as);
 
         btn_login.setOnClickListener(this);
         btn_signin.setOnClickListener(this);

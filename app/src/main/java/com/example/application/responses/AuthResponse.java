@@ -1,11 +1,11 @@
 package com.example.application.responses;
 
-import com.example.application.models.AuthInformation;
+import com.example.application.models.Auth;
 
 public class AuthResponse {
     private boolean result;
 
-    private AuthInformation data;
+    private Auth data;
 
 
     public boolean isResult() {
@@ -16,15 +16,15 @@ public class AuthResponse {
         this.result = result;
     }
 
-    public AuthInformation getData() {
+    public Auth getData() {
         return data;
     }
 
-    public void setData(AuthInformation data) {
+    public void setData(Auth data) {
         this.data = data;
     }
 
-    public AuthResponse(boolean result, AuthInformation data) {
+    public AuthResponse(boolean result, Auth data) {
         this.result = result;
         this.data = data;
     }
